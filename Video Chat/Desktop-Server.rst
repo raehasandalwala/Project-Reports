@@ -58,6 +58,7 @@ Server button
 **STEP 3: Setting up the mysql server connection**
 ````````````````````````````````````````````````
 On clicking the setup server button following screen opens up.
+
 .. image::
    https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/images/s4.png
    
@@ -190,14 +191,17 @@ The user has to enter the old password, then the new password and at last confir
 password and press on submit On clicking following things can happen:
 
 Case 1: If old password is wrong then message comes
+
 .. image::
    https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/images/s21.png
    
 Case 2: If confirmed password didn’t match the new password then message appears
+
 .. image::
    https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/images/s22.png
    
 Case 3: All fields are correct and the message appears:
+
 .. image::
    https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/images/s23.png
 And opens the admin login again
