@@ -74,7 +74,9 @@
 
 .. image::
    https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/images/50.png
+   
 .. image::
    https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/images/51.png
-   .. image::
+   
+.. image::
    https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/images/52.png
