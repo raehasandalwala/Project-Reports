@@ -3,7 +3,7 @@
 When you switch ON the tablet you will see on the screen, the display similar as shown in the
 Figure below. Click on the launcher icon provided on the right upper corner of the screen.
  .. image::
-   https://raw.github.com/raehasandalwala/ProjectReports/master/images/1.png
+   https://raw.github.com/raehasandalwala/Project-Reports/master/Video\ Chat/images/1.png
    
 Then you will see on the screen all the application present in the tablet.
  .. image::
