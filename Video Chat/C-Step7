@@ -1,0 +1,27 @@
+STEP 7: Group Chat
+• Group chat Menu showing the list of contact added options for Start, Close and Show
+chat.
+• Select a any number of contacts from the contact list and start the chat.
+• Requesting server for IP address of users and starting the chat.
+
+• If no selected contact online in the list
+• If they are available to chat, a chat room is started informing all the users about the chat.
+
+• If no users are selected and chat is started a notification is shown.
+• A groupchat staring notification.
+
+• Notification on homescreen for a new message.
+• Now the users in the room can chat through typing in textbox, the messages are sent to
+all the user in the room.
+
+• New messages in the room appearing.
+• Selecting a file by clicking the browse button
+
+• Sharing a file in the room, makes it availavle to everyone online.
+• A snapshot of received file from the conversation.
+
+• A part from coversation.
+• Closing a group chat
+
+• User leaving the room appearing messages
+
