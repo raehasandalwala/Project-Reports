@@ -26,8 +26,6 @@ The server frame consists of 3 panels :
 
 SERVER PANEL
 
-STATUS PANEL
-
 The server panel has a server log and three buttons namely :
 
 #. Start Server
@@ -204,6 +202,7 @@ Case 3: All fields are correct and the message appears:
 
 .. image::
    https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/images/s23.png
-And opens the admin login again
-On submitting the new password the server frame opens up
+And opens the admin login again.
+
+On submitting the new password the server frame opens up, 
 Follow Step 2;
