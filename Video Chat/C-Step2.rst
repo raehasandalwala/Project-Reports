@@ -1,3 +1,5 @@
+`STEP 1: Start the application <https://github.com/raehasandalwala/Project-Reports/blob/master/Video%20Chat/Client.rst>`_
+
 **Step 2 :  Setting up the application**
 
 Set up the server IP Address : 
