@@ -1,12 +1,28 @@
-STEP 7: Group Chat
+**STEP 7: Group Chat**
+
 • Group chat Menu showing the list of contact added options for Start, Close and Show
 chat.
+ .. image::
+   https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/images/35.png
 • Select a any number of contacts from the contact list and start the chat.
+
+ .. image::
+   https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/images/36.png
+   
 • Requesting server for IP address of users and starting the chat.
 
+ .. image::
+   https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/images/37.png
+
 • If no selected contact online in the list
+
+ .. image::
+   https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/images/38.png
+   
 • If they are available to chat, a chat room is started informing all the users about the chat.
 
+ .. image::
+   https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/images/39.png
 • If no users are selected and chat is started a notification is shown.
 • A groupchat staring notification.
 
