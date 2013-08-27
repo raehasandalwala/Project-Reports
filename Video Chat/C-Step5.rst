@@ -45,55 +45,67 @@ User can select audio call, video call or file transfer
    https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/images/22.png
 • if user is online then 
 
-  File Transfer occurs if user selects the file transfer following screen opens up
+  File Transfer : If user selects the 'File transfer' following screen opens up
+  
  .. image::
    https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/images/23.png
    
-  Remote user gets a file transfer request. If remote user accepts the request following screen appears.
+Remote user gets a file transfer request. 
+
  .. image::
    https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/images/24.png
+   
+If remote user accepts the request following screen appears.
+
+ .. image::
+   https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/images/25.png
    
 It has two buttons ‘Browse’ and ‘Send File’. Now user can browse a file from internal or
 external memory to transfer by clicking the browse button
 
  .. image::
-   https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/images/25.png
+   https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/images/26.png
 After selecting the file, user click on ‘Send file’ to transfer. Now a box appears, Which
 shows the amount of file transferred.
  .. image::
-   https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/images/26.png
+   https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/images/27.png
    
 **Audio Call**
 
-If user selects the audio call following screen opens up remote user gets a audio call request
+If user selects the audio call following screen opens up. 
 
  .. image::
-   https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/images/27.png
+   https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/images/28.png
+
+Remote user gets a audio call request.
+
+ .. image::
+   https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/images/29.png
    
 If remote user accepts the request following screen appears. Status is changed to ‘Connected’
 
  .. image::
-   https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/images/28.png
+   https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/images/30.png
    
 It shows two buttons to start and stop the audio call. Now user has to press start button to
 start audio call. To stop the audio call the stop button has to be pressed. If user rejects the
 call status text is changed to ‘Call has been rejected’
  .. image::
-   https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/images/29.png
+   https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/images/31.png
    
 **Video Call**
 
 If user selects the Video Call and remote user gets a video call request
 
  .. image::
-   https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/images/31.png
+   https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/images/32.png
    
 If remote user accepts the call, call status is changed to connected from connecting. It
 shows three buttons to Start, Receive and Stop the Video call. Now user has to press start
 button to start the camera. And receive button to receive the video stream of the remote
 user. To stop the video call the stop button has to be pressed.
  .. image::
-   https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/images/32.png
+   https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/images/33png
    
 `STEP 6: Change the password <https://github.com/raehasandalwala/Project-Reports/blob/master/Video%20Chat/C-Step6.rst>`_
 
