@@ -77,5 +77,5 @@
    
 • After you have left a conference call, you can again start a new conference call now, by
   following the procedure ,to start a conference, mentioned in this document.
-.. image::
-   https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/images/64.png
+
+`STEP 9: Logout <https://github.com/raehasandalwala/Project-Reports/blob/master/Video%20Chat/C-Step9.rst>`_
