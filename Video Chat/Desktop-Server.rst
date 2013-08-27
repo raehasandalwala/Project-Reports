@@ -2,79 +2,119 @@
 
 On starting the java application for the first time, it asks the administrator to set up an Admin
 password
-.. image::
+ .. image::
    https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/images/s1.png
    
 **STEP 2: Set up Admin password**
 • Case 1: If there is a password Mismatch then a dialog box shows up as shown
-.. image::
+ .. image::
    https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/images/s2.png
 • Case 2: If Exit using Close button on the right upper corner the application stops and on
 restarting again asks to set the Admin password
 • Case 3: If Admin password is correctly set up then the Server Main Frame opens
-
+ .. image::
+   https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/images/s3.png
+   
 NOTE: At any point of time if you close the application and restart the application after setting
-up the password, the Admin Login Window appears
-• Refer to Subsection 3.2.7
+up the password, the Admin Login Window appears.
+
+
 THE MAIN SERVER FRAME
-The server frame consists of 3 panels
-Server Panel
-The server panel has a server log and three buttons namely
-1. Start Server
-2. Setup server
-3. Save and Clear log
+
+The server frame consists of 3 panels :
+
+SERVER PANEL
+
+STATUS PANEL
+
+The server panel has a server log and three buttons namely :
+
+#. Start Server
+
+#. Setup server
+
+#. Save and Clear log
+
 It also contains a server log which keeps track of the operations and requests honoured
-and denied by the server
-• On clicking the start server button
+and denied by the server.
+
+On clicking the start server button
+
 Two things can happen:
-Case 1 : if you haven’t setup a server then on clicking start server, the log shows
+
+• Case 1 : if you haven’t setup a server then on clicking start server, the log shows
 messages as follows:
-76
-CSE Department, IIT Bombay
+
 “ERROR: Table ‘userdetails.address’ doesn’t exist”
-Case 2: if u don’t have the required mysql driver then error log comes as:
+
+• Case 2: if u don’t have the required mysql driver then error log comes as:
+
 “ERROR missing ‘com.mysql.jdbc’ driver”
+
 To get rid of these errors the admin must set up the server first to do so click on Setup
 Server button
-3.2.4
-STEP 3: Setting up the mysql server connection
-On clicking the setup server button following screen opens up
+
+**STEP 3: Setting up the mysql server connection**
+
+On clicking the setup server button following screen opens up.
+.. image::
+   https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/images/s4.png
+   
 The admin has to fill the informations about the server correctly, so as to connect with the
 mysql server through JDBC otherwise the previous errors would persist after proiding the
 correct details press the save button
+
 • and then click the create database button and the create Table button
+
 • now click on the close button to return to the server main frame
+
 • observer that the previously coming errors on the server log has stopped
+
 • clear the log by pressing the Save and Clear log button to refresh the log
+
 NOTE: At any point of time if you close the application and restart the application after setting
 up the password, the Admin Login Window appears
-77
-CSE Department, IIT Bombay
-• Refer to Subsection 3.2.7
-Status Panel
+
+STATUS PANEL
+
 Unless any user is registered by the Admin the panel looks like
+
+.. image::
+   https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/images/s5.png
+   
 The upper part shows the registered and online users and the lower part shows the registered but
-offline users
-78
-CSE Department, IIT Bombay
-To see this functionality let us register a user
-3.2.5 STEP 4: User Registration
+offline users.
+
+.. image::
+   https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/images/s6.png
+
+To see this functionality let us register a user.
+
+**STEP 4: User Registration**
+
 The Registration panel holds two fields in which username and password could be set for a
-client
-it also has 4 buttons
-1. Save
-2. Delete
-3. Kick
-4. View Database
+client.
+
+It also has 4 buttons
+
+#. Save
+
+#. Delete
+
+#. Kick
+
+#. View Database
+
 On clicking the save button following things can happen
-79
-CSE Department, IIT Bombay
-Case 1: If no username is given a dialog box comes as shown below
-Case 2: If no password was selected a dialog box comes as shown below
-Case 3: If a username already exists a dialog box comes as shown below
-Case 4: If unique username and a password is given
-80
-CSE Department, IIT Bombay
+
+• Case 1: If no username is given a dialog box comes as shown below
+
+• Case 2: If no password was selected a dialog box comes as shown below
+
+• Case 3: If a username already exists a dialog box comes as shown below
+
+• Case 4: If unique username and a password is given
+
 a dialog box comes as shown below
 On clicking the delete button
 • Case 1: If inappropriate username is given
