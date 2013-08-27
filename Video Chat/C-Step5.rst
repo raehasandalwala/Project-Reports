@@ -104,6 +104,7 @@ If remote user accepts the call, call status is changed to connected from connec
 shows three buttons to Start, Receive and Stop the Video call. Now user has to press start
 button to start the camera. And receive button to receive the video stream of the remote
 user. To stop the video call the stop button has to be pressed.
+
  .. image::
    https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/images/33png
    
