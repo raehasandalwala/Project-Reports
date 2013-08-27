@@ -17,6 +17,7 @@
 **STEP 9 : Logout**
 
 To logout from the server, user has to press logout in menu item. After logging out from the
-server, login screen appears with message: you have successfully logged out
+server, login screen appears with message: you have successfully logged out.
+
 .. image::
    https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/images/64.png
