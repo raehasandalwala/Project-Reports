@@ -76,6 +76,7 @@ call status text is changed to ‘Call has been rejected’
 **Video Call**
 
 If user selects the Video Call and remote user gets a video call request
+
  .. image::
    https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/images/31.png
    
