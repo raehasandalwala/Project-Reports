@@ -5,12 +5,12 @@ from the left side with 6 menu items
  .. image::
    https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/images/14.png
    
-**Home**
+**Home** : 
 On Pressing Home, user comes to home screen of the application.
  .. image::
    https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/images/16.png
    
-**Contacts**
+**Contacts** :
 As the Contacts menu is selected, the user can see all the contacts saved on his device
  .. image::
    https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/images/17.png
@@ -56,11 +56,14 @@ shows the amount of file transferred.
    https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/images/26.png
    
 **Audio Call**
+
 If user selects the audio call following screen opens up remote user gets a audio call request
+
  .. image::
    https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/images/27.png
    
 If remote user accepts the request following screen appears. Status is changed to ‘Connected’
+
  .. image::
    https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/images/28.png
    
@@ -71,8 +74,15 @@ call status text is changed to ‘Call has been rejected’
    https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/images/29.png
    
 **Video Call**
+
 If user selects the Video Call and remote user gets a video call request
-if remote user accepts the call, call status is changed to connected from connecting. It
+ .. image::
+   https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/images/31.png
+   
+If remote user accepts the call, call status is changed to connected from connecting. It
 shows three buttons to Start, Receive and Stop the Video call. Now user has to press start
 button to start the camera. And receive button to receive the video stream of the remote
 user. To stop the video call the stop button has to be pressed.
+ .. image::
+   https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/images/32.png
+   
