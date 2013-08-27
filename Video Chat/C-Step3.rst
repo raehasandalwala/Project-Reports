@@ -1,3 +1,7 @@
+`STEP 1: Start the application <https://github.com/raehasandalwala/Project-Reports/blob/master/Video%20Chat/Client.rst>`_
+
+`STEP 2: Setting up the application  <https://github.com/raehasandalwala/Project-Reports/blob/master/Video%20Chat/C-Step2.rst>`_
+
 **STEP 3: Logging in to the server**
 
 After setting proper parameters , Type in your username and password as provided by sysadmin 
