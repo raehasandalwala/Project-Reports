@@ -1,7 +1,6 @@
 **STEP 7: Group Chat**
 
-• Group chat Menu showing the list of contact added options for Start, Close and Show
-chat.
+• Group chat Menu showing the list of contact added options for Start, Close and Show chat.
  .. image::
    https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/images/35.png
 • Select a any number of contacts from the contact list and start the chat.
@@ -24,20 +23,55 @@ chat.
  .. image::
    https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/images/39.png
 • If no users are selected and chat is started a notification is shown.
-• A groupchat staring notification.
+
+ .. image::
+   https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/images/40.png
+• A groupchat starting notification.
+
+ .. image::
+   https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/images/41.png
 
 • Notification on homescreen for a new message.
+ 
+ .. image::
+   https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/images/42.png
+   
 • Now the users in the room can chat through typing in textbox, the messages are sent to
-all the user in the room.
+  all the user in the room.
 
+ .. image::
+   https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/images/43.png
+   
 • New messages in the room appearing.
+
+ .. image::
+   https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/images/44.png
 • Selecting a file by clicking the browse button
 
+ .. image::
+   https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/images/45.png
+
 • Sharing a file in the room, makes it availavle to everyone online.
+
+ .. image::
+   https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/images/46.png
 • A snapshot of received file from the conversation.
 
+ .. image::
+   https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/images/47.png
+
 • A part from coversation.
+
+ .. image::
+   https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/images/48.png
+   
 • Closing a group chat
+
+ .. image::
+   https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/images/49.png
 
 • User leaving the room appearing messages
 
+.. image::
+   https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/images/50.png
+ 
