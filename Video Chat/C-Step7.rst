@@ -95,5 +95,5 @@
    
 `STEP 8: Audio Conferencing <https://github.com/raehasandalwala/Project-Reports/blob/master/Video%20Chat/C-Step8.rst>`_
 
-`STEP 9 : Logout <https://github.com/raehasandalwala/Project-Reports/blob/master/Video%20Chat/C-Step9.rst>`_
+`STEP 9: Logout <https://github.com/raehasandalwala/Project-Reports/blob/master/Video%20Chat/C-Step9.rst>`_
 
