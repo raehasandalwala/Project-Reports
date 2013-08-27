@@ -13,14 +13,16 @@
 To change the password user has to click on Settings in the menu. Following screen appears
 
  .. image::
-   https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/images/33.png
+   https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/images/34.png
 User has to enter his old password, new password and confirm password, then user has to press
 submit button.
+
 • If user entered wrong old password, It displays a message : Wrong old password
-• If new password and confirm password doesn’t match, It displays a message : Password
-mismatch
+
+• If new password and confirm password doesn’t match, It displays a message : Password mismatch
+
 • If user enters correct old password and new password, confirm password matches then
-password is changed successfully.
+  password is changed successfully.
 
 `STEP 7: Group Chat <https://github.com/raehasandalwala/Project-Reports/blob/master/Video%20Chat/C-Step7.rst>`_
 
