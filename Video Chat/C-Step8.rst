@@ -53,29 +53,29 @@
    
 • If all the users leave the conference(while you are still in the conference,i.e you have not
   ended), then the following message will be displayed on your screen,
-   .. image::
+.. image::
    https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/images/60.png
    
-    indicating that all users have left the conference, which means the conference call has
-   ended.
+  indicating that all users have left the conference, which means the conference call has
+  ended.
   
 • If you want to leave the conference at any point of time, you can press on the “leave
   conference” button, following which a message will be shown on your screen,
- .. image::
+.. image::
    https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/images/61.png
    
    indicating that the audio conference(for you) has ended. If you leave the conference , all
   other users ,which were in the conference, still continue to communicate.
 
 • If you press the “start conference” button while you are still into a conference, the follwing message will appear,
- .. image::
+.. image::
    https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/images/62.png
    
   indicating you need to first close one conference to start another conference.
 
 • If you press the “leave conference” button , even though you are not in any conference,
   then you will be given a message, as shown in figure
- .. image::
+.. image::
    https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/images/63.png
    
    indicating you must first start a conference, to leave it.
