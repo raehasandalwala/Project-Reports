@@ -483,182 +483,172 @@ Functions of different Classes
 **1. CLIENT:**
 
 • DataBaseHandler : This class handles the client side database. When
-   first time application is installed, it creates a database contactManager with
-   three fields uid, name and owner. Primary key is uid+owner. Database
-   stores all the contact saved on the device. This class handles the operations
-   like add contact, delete contact in the contact list.
+  first time application is installed, it creates a database contactManager with
+  three fields uid, name and owner. Primary key is uid+owner. Database
+  stores all the contact saved on the device. This class handles the operations
+  like add contact, delete contact in the contact list.
 
 • TcpActivityAudio : This thread listens for incoming call requests from all
-   the users registered with server. When user receives a call It shows a alert
-   box with two options accept or reject. It creates a tcp connection with the
-   caller. And it sends and receives all the control messages during the call.
-   This tcp connection closes when either of side ends the call.
+  the users registered with server. When user receives a call It shows a alert
+  box with two options accept or reject. It creates a tcp connection with the
+  caller. And it sends and receives all the control messages during the call.
+  This tcp connection closes when either of side ends the call.
 
 • TcpActivityFile : This thread listens for incoming fil transfer requests
-   from all the users registered with server. When user receives a request
-   It shows a alert box with two options accept or reject. It creates a tcp
-   connection with the caller. When user accept or reject the call, this tcp
-   connection is closed. Receive file Thread receives the file in background.
+  from all the users registered with server. When user receives a request
+  It shows a alert box with two options accept or reject. It creates a tcp
+  connection with the caller. When user accept or reject the call, this tcp
+  connection is closed. Receive file Thread receives the file in background.
 
 • TcpActivityVideo : This thread listens for incoming video call requests
-   from all the users registered with server. When user receives a video call
-   It shows a alert box with two options accept or reject. It creates a tcp con-
-   nection with the caller. And it sends and receives all the control messages
-   during the call. This tcp connection closes when either of side ends the
-   call.
+  from all the users registered with server. When user receives a video call
+  It shows a alert box with two options accept or reject. It creates a tcp con-
+  nection with the caller. And it sends and receives all the control messages
+  during the call. This tcp connection closes when either of side ends the
+  call.
 
-• AccepCallThread : This thread starts working when user accepts the au-
-   dio call.
+• AccepCallThread : This thread starts working when user accepts the audio call.
 
-• RejectCallThread : This thread starts working when user rejects the video
-   call.
+• RejectCallThread : This thread starts working when user rejects the video call.
 
-• AccepCallThreadF : This thread starts working when user accepts the file
-   transfer request.
+• AccepCallThreadF : This thread starts working when user accepts the file transfer request.
 
-• RejectCallThreadF : This thread starts working when user rejects the file
-   transfer request.
+• RejectCallThreadF : This thread starts working when user rejects the file transfer request.
 
-• AccepCallThreadV : This thread starts working when user accepts the
-   video call request.
+• AccepCallThreadV : This thread starts working when user accepts the video call request.
 
-• RejectCallThreadV : This thread starts working when user rejects the
-   video call request.
+• RejectCallThreadV : This thread starts working when user rejects the video call request.
 
-• PlayAudio : This thread starts working when a audio call starts. It plays
-   the UDP audio packets received from remote user.
+• PlayAudio : This thread starts working when a audio call starts. It plays the UDP audio packets received from remote user.
 
 • RecordSend : This thread starts when a audio call starts, It forms UDP
-   audio packets and send them to remote users.
+  audio packets and send them to remote users.
 
-• TcpConnection(Audio) : This thread makes a TCP connection with re-
-   mote user when user makes audio call.
+• TcpConnection(Audio) : This thread makes a TCP connection with remote user when user makes audio call.
 
-• Contact : This class has two fields uid and name. Object of this class
-   represent the contact.
+• Contact : This class has two fields uid and name. Object of this class represent the contact.
    
 • ContactsFrag : This class maintains all the contact activities.
-   When user select a contact for audio/video/file this class initiates the threads
-   AudioConnection/VideoConnection/ConnectionProgress.
+  When user select a contact for audio/video/file this class initiates the threads
+  AudioConnection/VideoConnection/ConnectionProgress.
 
-• AudioConnectionProgress : This thread starts working, when user se-
-   lects a contact for audio call. It shows the message like “user is not on-
-   line”,“contact is not registered on server” or “user is busy”. If user is online
-   it receives the IP of user from server and makes audio call.
+• AudioConnectionProgress : This thread starts working, when user selects 
+  a contact for audio call. It shows the message like “user is not online”,
+  “contact is not registered on server” or “user is busy”. If user is online
+  it receives the IP of user from server and makes audio call.
 
 • VideoConnectionProgress : This thread starts working, when user selects
-   a contact for video call. It shows the message like “user is not online”
-   ,“contact is not registered on server” or “user is busy”. If user is online
-   it receives the IP of user from server and makes video call.
+  a contact for video call. It shows the message like “user is not online”
+  ,“contact is not registered on server” or “user is busy”. If user is online
+  it receives the IP of user from server and makes video call.
 
 • ConnectionProgress : This thread starts working, when user selects a
-   contact for file transfer. It shows the message like “user is not online”,“contact
-   is not registered on server” or “user is busy”. If user is online it receives
-   the IP of user from server and makes file transfer request to remote user.
+  contact for file transfer. It shows the message like “user is not online”,“contact
+  is not registered on server” or “user is busy”. If user is online it receives
+  the IP of user from server and makes file transfer request to remote user.
 
 • SettingsFrag : This class is used to change password. User have to provide 
-   three things: Old password, new password and confirm passwod.
+  three things: Old password, new password and confirm passwod.
 
 • FileShare : This class starts working when user makes a file transfer request to remote user.
 
 • TcpConnection(File) : It establishes a TCP connection with remote user
-   to make a file transfer request.
+  to make a file transfer request.
 
 • SendAsynFile : This background process starts when user send a file to
-   remote user.It shows a dialogue box to show the amount of file transferred.
+  remote user.It shows a dialogue box to show the amount of file transferred.
 
 • Login : This class loads when user starts the app. It fetches the user
-   preferences(server IP) saved on userthe device and send the login request
-   to the server. On succesful login Home intent is opened.
+  preferences(server IP) saved on userthe device and send the login request
+  to the server. On succesful login Home intent is opened.
 
 • PrefActivity : This class save the preferences of user on the device. User
-   can give his preference on the login page.
+  can give his preference on the login page.
 
 • Group audio conference call : This class handles the main functionality
-   of retrieving Ip’s of selected users(for audio conference) from the server
-   and sending them appropriate messages on clicking “start conference” and
-   “stop conference” button.
+  of retrieving Ip’s of selected users(for audio conference) from the server
+  and sending them appropriate messages on clicking “start conference” and
+  “stop conference” button.
 
 • SendIp : This class sends the List of Ip’s of all the users selected in the
-   audio conference, to each and every user in the conference. This class
-   starts when conference initiator starts the conference.
+  audio conference, to each and every user in the conference. This class
+  starts when conference initiator starts the conference.
 
 • SendAudioMessage : This class is used to send audio conference starting
-   request to the selected users from audio conferencing page.
+  request to the selected users from audio conferencing page.
 
 • Send exit message : This class is used to send exit message to all the
-   users in the conference call. This class is invoked when any user leaves the
-   conference.
+  users in the conference call. This class is invoked when any user leaves the
+  conference.
 
 • ContactAdapter : This class creates a view for displaying the contacts of
-   the user with a checkbox(for selecting them for audio conference).
+  the user with a checkbox(for selecting them for audio conference).
 
 • FetchAsyncIp : This class fetches Ip’s of selected users(for audio conference) from the server.
 
 • Group audio conference receive : This class handles the functionality
-   of receiving audio conference requests from other users and also actions to
-   be taken after receiving different types of requests.
+  of receiving audio conference requests from other users and also actions to
+  be taken after receiving different types of requests.
 
 • SendAcceptFlag : This class sends a confirmation to all users in the conference
-   call that he she has accepted the call request and is now starting communication.
+  call that he she has accepted the call request and is now starting communication.
 
 • saveMessages append : This class decodes messages received from other
-   users and performs actions according to received messages.
+  users and performs actions according to received messages.
 
 • Send exit message : This class is used to send message to all other users
-   in the conference call that he she has rejected the conference request.
+  in the conference call that he she has rejected the conference request.
 
 • Group chat list : This class extends the fragment class, which is used to
-   generate the list of friends added by the user in the contats in the selected
-   fragment of group chat. Also the implementation of this class starts the
-   group chat between all the selected friends from the contact list by fetching
-   the IP address from the server.
+  generate the list of friends added by the user in the contats in the selected
+  fragment of group chat. Also the implementation of this class starts the
+  group chat between all the selected friends from the contact list by fetching
+  the IP address from the server.
 
 • GroupchatActivity : This is the main UI class for having a group chat,
-   this class has its own layout for showing messages, the list for showing
-   online users and selecting the file and sending the same to the whole group.
-   The messages and file are sent in seperate threads to all the selected friends.
+  this class has its own layout for showing messages, the list for showing
+  online users and selecting the file and sending the same to the whole group.
+  The messages and file are sent in seperate threads to all the selected friends.
 
 • SendMessage : Inner class of group chat activity to send messages to the
-   friends selected in the group chat.
+  friends selected in the group chat.
 
 • Group message receive thread : A seperate thread which starts at the
-   home page, the thread handles all the messages requests on a particular
-   port, either it is a new group chat request or a new message or an exit
-   message. This thread also replies for a bad request.
+  home page, the thread handles all the messages requests on a particular
+  port, either it is a new group chat request or a new message or an exit
+  message. This thread also replies for a bad request.
 
 • SendFile Group Thread : A thread class which spawn seperate threads
-   and manages all the spawned threads for sending, completion, failures of
-   the specified file to all the friends in the group simulataneously.
+  and manages all the spawned threads for sending, completion, failures of
+  the specified file to all the friends in the group simulataneously.
 
 • ReceiveFile Group Thread : A thread class which spawn seperate threads
-   and manages all the spawned threads for validating file request with group
-   code start receiving, completion, failures of the file from the sending party,
-   a maximum of 3 simultaneously receive is possible.
+  and manages all the spawned threads for validating file request with group
+  code start receiving, completion, failures of the file from the sending party,
+  a maximum of 3 simultaneously receive is possible.
 
 • Send exit message : A thread class to inform all the friends in selected
-   group that the he has left the chat.
+  group that the he has left the chat.
 
 2. SERVER:
 • VDOServer: It initiates the OnlineChecker and ServerTime threads. It
-   continuously listens at port 6500 for all client requests. It creates a new
-   ProcessPacket thread to process each received packet from a client.
+  continuously listens at port 6500 for all client requests. It creates a new
+  ProcessPacket thread to process each received packet from a client.
 
 • OnlineChecker:This class pings each online client every 5 minutes. If it
-   does not receive a reply it updates the database to mark the client as offline.
+  does not receive a reply it updates the database to mark the client as offline.
 
 • ServerTime: Send the current time of the server to the requesting clients.
 
 • ServerSetup: sets up the mysql server and connects to it by taking the
-   details from admin.
+  details from admin.
 
 • Layout:consists the main server frame
 
-• ListUsers: shows the present number of online and offline users with their
-   names.
+• ListUsers: shows the present number of online and offline users with their names.
 
 • UserRegistration: registers a user, deletes him from the database and
-   forcefully kicks him out of the server when required.
+  forcefully kicks him out of the server when required.
 
 2.3.2 Data Flow Diagram
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -673,7 +663,7 @@ Functions of different Classes
 
    – Client End:
    
-1 . The Client either click on the name of the person in his/her own contact list
+1. The Client either click on the name of the person in his/her own contact list
    and if the client to be called is not in the contact list of the call-initiator client,
    he can add the person to his contact list. a) Shehe needs to know the unique id
    of the other person, he/she wants to add in his contact list and if the unique id
@@ -681,58 +671,60 @@ Functions of different Classes
    that the other user is not registered, otherwise adds this user to the contact of
    the caller client.
 
-2 . The server returns the ip add of the person who needs to get called, this
+2. The server returns the ip add of the person who needs to get called, this
    ip address is returned to the client who wants to initiate the call and the peer to
    peer then gets started.
    
-3 . Only clients who are registered at the server side can be called (with their
+3. Only clients who are registered at the server side can be called (with their
    unique id).
    
-4 . Create 2 TCP sockets (to communicate with another online client).
+4. Create 2 TCP sockets (to communicate with another online client).
 
-5 . If the user wants to make a call, he has to click on the start button and if the
+5. If the user wants to make a call, he has to click on the start button and if the
    user wants to end a ongoing call, click on the stop button. If the other user is
    not online, a toast is shown at the client side that the other client is not online.
    
-6 . Else, for an Incoming Call, ringing gets started on the other side and a toast is
+6. Else, for an Incoming Call, ringing gets started on the other side and a toast is
    shown, showing the name of the person who is calling.
    
-a . If “accept”,
+a. If “accept”,
    i . Start call
    ii . End call
    
-b . Else if “reject”, reject call.
+b. Else if “reject”, reject call.
 
-7 . If the client on the other side has rejected the call of the sendercaller client,
+7. If the client on the other side has rejected the call of the sendercaller client,
    a toast is shown at hisher side that the user has rejected the call and the toast
    which till now showed -connecting... now disappears.
    
-8 . The audio packets are sent through the UDP protocol.
+8. The audio packets are sent through the UDP protocol.
 
-9 . The ringing and the call connecting process is handled by the TCP mechanism.
+9. The ringing and the call connecting process is handled by the TCP mechanism.
 
-10 . Both the callers need to use the earphone to have better quality.
+10. Both the callers need to use the earphone to have better quality.
+
    – Video Calling: Assuming that both client A and B are logged in:
-a . A TCP request is forwarded by Client A to B, if Client B is not busy it accepts
+   
+a. A TCP request is forwarded by Client A to B, if Client B is not busy it accepts
    the request.
-b . A pop up window appears on Client Bs screen for accepting or rejecting the
+b. A pop up window appears on Client Bs screen for accepting or rejecting the
    video call.
-c . If Client B accepts the call, Client A is notified to start sending and receiving 
+c. If Client B accepts the call, Client A is notified to start sending and receiving 
    UDP packets to Client B and B also starts sending and receiving packets    simultaneously.
-d . The sending thread on both the clients prepare and extract the packets to be
+d. The sending thread on both the clients prepare and extract the packets to be
    sent in following way.
 
 · Camera sends frames, which is compressed to JPEG for memory consumption 
-   to the thread one by one which is combined with the audio recorded
-   in the buffer and a packet is formed which is sent via UDP connection as a
-   datagram packet.
+  to the thread one by one which is combined with the audio recorded
+  in the buffer and a packet is formed which is sent via UDP connection as a
+  datagram packet.
    
 · Along with audio and video data, audio length, video length and frame
-   numbers are also inserted in the packet.
+  numbers are also inserted in the packet.
    
 · The receiving thread receives the packet and extracts the audio and video
-   data in different buffers. The JPEG image is drawn on canvas and the audio
-   is fed to track to be played.
+  data in different buffers. The JPEG image is drawn on canvas and the audio
+  is fed to track to be played.
    
 5 . Any Client can end the call at any point of time. Then the other client is
    notified about the end of call.
