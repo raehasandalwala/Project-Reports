@@ -344,17 +344,17 @@ Server and Client Side :
 • Server Application
 
 – Purpose: To maintain a database which has data regarding the clients and to register
-the clients.
+  the clients.
 
-∗ Providing login requests to the clients.
+   ∗ Providing login requests to the clients.
 
-∗ Providing IP address to clients on proper request.
+   ∗ Providing IP address to clients on proper request.
 
-∗ Registering the clients.
+   ∗ Registering the clients.
 
-∗ Manipulating data according to the request of clients.
+   ∗ Manipulating data according to the request of clients.
 
-∗ Maintaining log of the server.
+   ∗ Maintaining log of the server.
 
 .. image::
    https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/figures/7.png
@@ -364,9 +364,9 @@ the clients.
 – Purpose: to provide cheap facility of audio call between two users
 
    ∗ First the caller goes through the contact list to select a person to call and then
-     holds on it to find the option of calling
+     holds on it to find the option of calling.
    ∗ The server checks if the user is available or not, if not it sends the message to
-     the caller that the user is not available, and if available it connects the call
+     the caller that the user is not available, and if available it connects the call.
    ∗ As soon as the call connects the receiver receives a pop up window showing an
      incoming call which has two options : Accept and Reject.
    ∗ The receiver can accept the call by choosing the accept option and the call will
@@ -374,17 +374,17 @@ the clients.
    ∗ The receiver can also reject the call If he choses reject option.
    ∗ If the receiver does not receive the call, a missed call alert is shown.
    ∗ Once the call is accepted the receiver or the caller both have the option to end
-   the call, in which cases the communication between them will be put to an end.
+     the call, in which cases the communication between them will be put to an end.
    
 .. image::
    https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/figures/8.png
    
 • Audio call between multiple users
 – Purpose: to provide cheap communication between many users who are within the
-   range of Wi-Fi.
-∗ The sequence and stimulus is same as that of the two client user call expect that
-   the new users are added by the call initiator.
-∗ if one user ends the call ,it doesnt affect the other users who are in the call.
+  range of Wi-Fi.
+   ∗ The sequence and stimulus is same as that of the two client user call expect that
+     the new users are added by the call initiator.
+   ∗ if one user ends the call ,it doesnt affect the other users who are in the call.
 
 .. image::
    https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/figures/9.png
