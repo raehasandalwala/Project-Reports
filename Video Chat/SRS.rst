@@ -151,12 +151,12 @@ without any involvement of manual help.
 
 **Software Interfaces**
 
-  Software interface for “Video-Chat” application:
+ Software interface for “Video-Chat” application:
   
 • Device based on android operating system versions 4.0(API level 14) or greater.
 • Device should provide facility for lightweight Database Management System -SQLite.
 
-  Software interface for “Server” application:
+ Software interface for “Server” application:
   
 • Computer with Windows or Linux based operating system (Database Management System used is MySQL 5.5).
 
@@ -299,8 +299,7 @@ and additions to requirements proposed.
 `````````````````````````````````
 E-R Diagram
 Server and Client Side
-12
-CSE Department, IIT Bombay
+
 Use Case Diagram
 • Server Application
 – Purpose: To maintain a database which has data regarding the clients and to register
@@ -310,8 +309,7 @@ the clients.
 ∗ Registering the clients.
 ∗ Manipulating data according to the request of clients.
 ∗ Maintaining log of the server.
-13
-CSE Department, IIT Bombay
+
 • Audio Call between two users
 – Purpose: to provide cheap facility of audio call between two users
 ∗ First the caller goes through the contact list to select a person to call and then
@@ -331,8 +329,7 @@ the call, in which cases the communication between them will be put to an end.
 range of Wi-Fi.
 ∗ The sequence and stimulus is same as that of the two client user call expect that
 the new users are added by the call initiator.
-14
-CSE Department, IIT Bombay
+
 ∗ if one user ends the call ,it doesnt affect the other users who are in the call.
 • Video call between two users
 – Purpose: to provide cheap video calling between two users who can be connected
