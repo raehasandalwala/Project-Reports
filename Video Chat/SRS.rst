@@ -56,8 +56,12 @@ team and the users of the product.
 ```````````
 The software “Video Chat” is an application that will be used by general users to do chat, file
 share, voice calls and video calls using Aakash tablet. Also audio and chat conferencing facility
-has been provided. To make a call both the users need to be registered at the server. This
-communication is via wi-fi and will incur no expenditure to the end users. Communication
+has been provided. To make a call both the users need to be registered at the server. 
+
+.. image::
+   https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/figures/1.png
+
+This communication is via wi-fi and will incur no expenditure to the end users. Communication
 between any two users will be enabled as long as both are logged-in at the server.
 An application “Server” is required to register the users and maintain the information regarding
 the MAC and current IP addresses of all the logged-in users. The clients and server must be
