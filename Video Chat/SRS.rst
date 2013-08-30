@@ -107,18 +107,25 @@ The application “Video-Chat” will be developed to operate on any android bas
 like mobile phones and tablets with android versions 4.0 (API level 14) or greater. It
 requires a wi-fi connection facility in the device. For voice communication a speaker and
 an internal/ external microphone is required.
+
 Server software has to be implemented on desktop computers (windows/ linux based). It
 requires a WiFi or LAN connection to connect to all the users. It also requires JDK 1.6
 or above, mysql server 5.5 and jdbc driver.
+
 1.2.3 User Documentation
+````````````````````````
 A detailed user manual and possibly on-line help will be delivered along with the software.
-3
-CSE Department, IIT Bombay
+
 1.2.4 Assumptions And Dependencies
+```````````````````````````````````
 1. JDK 1.6 or later
+
 2. JRE 1.6 or later
+
 3. Eclipse Indigo
+
 4. Android SDK 4.0 or later
+
 5. ADT plugin 18
 1.3
 1.3.1
