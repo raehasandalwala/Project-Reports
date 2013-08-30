@@ -760,7 +760,7 @@ on remote clients side which has accept and reject option.
    
 ∗ It uses TCP protocol to send the file to remote client.
 ∗ While the file is being sent, a progress bar is shown and the file is sent in the
-background using
+   background using
 
 – Group Chat. Algorithm for group Chat and Group File Share
 
