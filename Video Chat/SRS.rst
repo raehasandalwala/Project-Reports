@@ -177,8 +177,7 @@ without any involvement of manual help.
 
 • Product uses UDP protocol for communication between a client and the server.
 • TCP protocol is used to establish all kinds of client to client communication.
-• UDP protocol is used for transmitting the audio and video data between two users during
-    the call.
+• UDP protocol is used for transmitting the audio and video data between two users during the call.
     
 1.3.2 Functional Requirements
 `````````````````````````````
@@ -199,20 +198,18 @@ without any involvement of manual help.
 
 1.3.3 Performance Requirements
 `````````````````````````````
-1. Any transaction between a client and the server will take approximately not more than 3
-    seconds.
+1. Any transaction between a client and the server will take approximately not more than 3 seconds.
     
-2. Establishing a call connection between two clients take approximately not more than 4
-    seconds.
+2. Establishing a call connection between two clients take approximately not more than 4 seconds.
     
 3. The lag in the audio and video data being transferred between the two users during call
-    will be approximately not more than 3 seconds.
+   will be approximately not more than 3 seconds.
     
 4. Any no. of users may be logged-in at the server at any time.
 
 5. All the users need to be connected to same/different access points of the same network.
 6. The “Video-Chat” application should be light to minimise the power consumption of the
-    device.
+   device.
 
 CHAPTER 2 : DESIGN DOCUMENTS
 ============================
@@ -258,18 +255,25 @@ registered at the same network. Server must be connected to same WiFi network.
 **Hardware Requirements**
 
 • The Server (Desktop/tablet) and Client (tablet) should have WiFi connectivity.
+
 • To use the Video Conferencing application a headphone or headset and an internal micro-
-    phone is required with the device.
+  phone is required with the device.
     
 **Software Requirements**
+
 • Software interface for Video Conferencing application :
-– Any device based on android operating system versions 4.0.3 and higher.
-– Support for lightweight Database Management System SQLite.
+
+   – Any device based on android operating system versions 4.0.3 and higher.
+   
+   – Support for lightweight Database Management System SQLite.
+
 • Software interface for Server software :
-– Any computer with windows or linux based operating system (Database Management
-    System used is MySQL).
-– Any device based on android operating system versions 4.0.3 and higher (Database
-    Management system used is SQLite).
+
+   – Any computer with windows or linux based operating system (Database Management
+     System used is MySQL).
+     
+   – Any device based on android operating system versions 4.0.3 and higher (Database
+     Management system used is SQLite).
 
 2.2.3 Model Used (Iterative Model)
 ``````````````````````````````````
@@ -287,26 +291,41 @@ Iteration should eventually result in a requirements phase that produces a compl
 final specification of requirements. 
 
 **A Design phase** - in which a software solution to meet the
-requirements is designed. This may be a new design, or an extension of an earlier design. An
-Implementation and Test phase - when the software is coded, integrated and tested. 
+requirements is designed. This may be a new design, or an extension of an earlier design. 
+
+**An Implementation and Test phase** - when the software is coded, integrated and tested. 
+
 **A Review phase** - in which the software is evaluated, the current requirements are reviewed, and changes
 and additions to requirements proposed.
 
 2.2.4 Task List
 ````````````````
 1 . Establish Connection between Server and Client using WiFi.
+
 2 . Establishing Peer to Peer Connection.
+
 3 . Database Management and Database Connectivity.
+
 4 . Parsing the Messages in the server and updating the Database.
+
 5 . Fetching IPs’ of all available users from server.
+
 6 . Recording and Playing Audio in Aakash Tablet.
+
 7 . Recording and Playing Video in Aakash tablet.
+
 8 . Transmitting live audio peer-to-peer(Conference).
+
 9 . Transmitting live video peer-to-peer(Call).
+
 10 . Setting up of Calling Functionality between Clients for Video Call.
+
 11 . Setting up of Calling Functionality between Clients for Audio Conference.
+
 12 . Video Call Testing
+
 13 . Audio Conference Call Testing
+
 14 . Group Chat Testing along with Group File Sharing
 
 2.3 DESIGN AND IMPLEMENTATION
@@ -326,28 +345,35 @@ Server and Client Side :
 
 – Purpose: To maintain a database which has data regarding the clients and to register
 the clients.
+
 ∗ Providing login requests to the clients.
+
 ∗ Providing IP address to clients on proper request.
+
 ∗ Registering the clients.
+
 ∗ Manipulating data according to the request of clients.
+
 ∗ Maintaining log of the server.
 
 .. image::
    https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/figures/7.png
 
 • Audio Call between two users
+
 – Purpose: to provide cheap facility of audio call between two users
-∗ First the caller goes through the contact list to select a person to call and then
-   holds on it to find the option of calling
-∗ The server checks if the user is available or not, if not it sends the message to
-   the caller that the user is not available, and if available it connects the call
-∗ As soon as the call connects the receiver receives a pop up window showing an
-   incoming call which has two options : Accept and Reject.
-∗ The receiver can accept the call by choosing the accept option and the call will
-   start and the two persons can communicate with each other.
-∗ The receiver can also reject the call If he choses reject option.
-∗ If the receiver does not receive the call, a missed call alert is shown.
-∗ Once the call is accepted the receiver or the caller both have the option to end
+
+   ∗ First the caller goes through the contact list to select a person to call and then
+     holds on it to find the option of calling
+   ∗ The server checks if the user is available or not, if not it sends the message to
+     the caller that the user is not available, and if available it connects the call
+   ∗ As soon as the call connects the receiver receives a pop up window showing an
+     incoming call which has two options : Accept and Reject.
+   ∗ The receiver can accept the call by choosing the accept option and the call will
+     start and the two persons can communicate with each other.
+   ∗ The receiver can also reject the call If he choses reject option.
+   ∗ If the receiver does not receive the call, a missed call alert is shown.
+   ∗ Once the call is accepted the receiver or the caller both have the option to end
    the call, in which cases the communication between them will be put to an end.
    
 .. image::
@@ -408,26 +434,40 @@ the clients.
 The following diagrams shows different the user defined classes functional in our application:
 
 Login Class
+
 .. image::
    https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/figures/13.png
+   
 Home Class
+
 .. image::
    https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/figures/14.png
+   
 Video Call Class
+
 .. image::
    https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/figures/15.png
+   
 Audio Conferencing Class
+
 .. image::
    https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/figures/16.png
+   
 Group Chat Class
+
 .. image::
    https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/figures/17.png
+   
 File Sharing Class
+
 .. image::
    https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/figures/18.png
+   
 Server Class
+
 .. image::
    https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/figures/19.png
+   
 Functions of different Classes
 1. CLIENT:
 • DataBaseHandler : This class handles the client side database. When
