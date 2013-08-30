@@ -663,173 +663,230 @@ Functions of different Classes
 2.3.2 Data Flow Diagram
 ~~~~~~~~~~~~~~~~~~~~~~~~
 • Video Conferencing Application
-
+.. image::
+   https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/figures/20.png
+   
 2.3.3 Low Level Design Document
-Algorithm & Flowchart
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Algorithm & Flowchart**
 • Audio Call
-– Client End:
+
+   – Client End:
+   
 1 . The Client either click on the name of the person in his/her own contact list
-and if the client to be called is not in the contact list of the call-initiator client,
-he can add the person to his contact list. a) Shehe needs to know the unique id
-of the other person, he/she wants to add in his contact list and if the unique id
-is found by the server at the server side, the server sends a message to the client
-that the other user is not registered, otherwise adds this user to the contact of
-the caller client.
-31
-CSE Department, IIT Bombay
+   and if the client to be called is not in the contact list of the call-initiator client,
+   he can add the person to his contact list. a) Shehe needs to know the unique id
+   of the other person, he/she wants to add in his contact list and if the unique id
+   is found by the server at the server side, the server sends a message to the client
+   that the other user is not registered, otherwise adds this user to the contact of
+   the caller client.
+
 2 . The server returns the ip add of the person who needs to get called, this
-ip address is returned to the client who wants to initiate the call and the peer to
-peer then gets started.
+   ip address is returned to the client who wants to initiate the call and the peer to
+   peer then gets started.
+   
 3 . Only clients who are registered at the server side can be called (with their
-unique id) .
-4 . Create 2 TCP sockets (to communicate with another online client)
+   unique id).
+   
+4 . Create 2 TCP sockets (to communicate with another online client).
+
 5 . If the user wants to make a call, he has to click on the start button and if the
-user wants to end a ongoing call, click on the stop button. If the other user is
-not online, a toast is shown at the client side that the other client is not online.
+   user wants to end a ongoing call, click on the stop button. If the other user is
+   not online, a toast is shown at the client side that the other client is not online.
+   
 6 . Else, for an Incoming Call, ringing gets started on the other side and a toast is
-shown, showing the name of the person who is calling.
+   shown, showing the name of the person who is calling.
+   
 a . If “accept”,
-i . Start call
-ii . End call
+   i . Start call
+   ii . End call
+   
 b . Else if “reject”, reject call.
+
 7 . If the client on the other side has rejected the call of the sendercaller client,
-a toast is shown at hisher side that the user has rejected the call and the toast
-which till now showed -connecting... now disappears.
+   a toast is shown at hisher side that the user has rejected the call and the toast
+   which till now showed -connecting... now disappears.
+   
 8 . The audio packets are sent through the UDP protocol.
+
 9 . The ringing and the call connecting process is handled by the TCP mechanism.
+
 10 . Both the callers need to use the earphone to have better quality.
-– Video Calling: Assuming that both client A and B are logged in:
-1 . A TCP request is forwarded by Client A to B, if Client B is not busy it accepts
-the request.
-2 . A pop up window appears on Client Bs screen for accepting or rejecting the
-video call.
-3 . If Client B accepts the call, Client A is notified to start sending and receiv-
-ing UDP packets to Client B and B also starts sending and receiving packets
-simultaneously.
-4 . The sending thread on both the clients prepare and extract the packets to be
-sent in following way.
-32
-CSE Department, IIT Bombay
-· Camera sends frames, which is compressed to JPEG for memory consump-
-tion to the thread one by one which is combined with the audio recorded
-in the buffer and a packet is formed which is sent via UDP connection as a
-datagram packet.
+   – Video Calling: Assuming that both client A and B are logged in:
+a . A TCP request is forwarded by Client A to B, if Client B is not busy it accepts
+   the request.
+b . A pop up window appears on Client Bs screen for accepting or rejecting the
+   video call.
+c . If Client B accepts the call, Client A is notified to start sending and receiving 
+   UDP packets to Client B and B also starts sending and receiving packets    simultaneously.
+d . The sending thread on both the clients prepare and extract the packets to be
+   sent in following way.
+
+· Camera sends frames, which is compressed to JPEG for memory consumption 
+   to the thread one by one which is combined with the audio recorded
+   in the buffer and a packet is formed which is sent via UDP connection as a
+   datagram packet.
+   
 · Along with audio and video data, audio length, video length and frame
-numbers are also inserted in the packet.
+   numbers are also inserted in the packet.
+   
 · The receiving thread receives the packet and extracts the audio and video
-data in different buffers. The JPEG image is drawn on canvas and the audio
-is fed to track to be played.
+   data in different buffers. The JPEG image is drawn on canvas and the audio
+   is fed to track to be played.
+   
 5 . Any Client can end the call at any point of time. Then the other client is
-notified about the end of call.
+   notified about the end of call.
+   
 – File Share Assuming that the client A and B are online:
+
 1 . A receiving thread always runs in the background of activity which listens to
 the incoming request of file share from remote client.
+
 2 . Client A selects a user from contacts list and selects file share option.
+
 3 . A message is sent to server about the type of operation i.e. file share in this
 case with username and UId.
+
 4 . The server returns the IP address corresponding to that UID.
+
 5 . A TCP request is forwarded to remote client which opens a pop-up window
 on remote clients side which has accept and reject option.
+
 · If remote client selects accept, then Client A is notified that the remote
-client has accepted the request.
+   client has accepted the request.
+   
 · Client A is taken to the main thread of file share where it can select the file
-to be sent by OPEN button.
+   to be sent by OPEN button.
+   
 · It gives the list of the contents of SD card to be selected for file transfer.
+
 · Once a file is selected, it can then be sent to the remote client by clicking
-on the sent button.
+   on the sent button.
+   
 · If the remote user rejects the request for file share, a message is sent to
-Client A that its request has been rejected.
+   Client A that its request has been rejected.
+   
 ∗ It uses TCP protocol to send the file to remote client.
 ∗ While the file is being sent, a progress bar is shown and the file is sent in the
 background using
-33
-CSE Department, IIT Bombay
+
 – Group Chat. Algorithm for group Chat and Group File Share
-1 .A GroupMessageReceive(GMR) Thread is running which is always listening
-for a TCP socket connection on a specific port, when the user logs in for a
-message or a new group chat request.
-2 .A ReceiveFile Group Thread Thread is running which is always listening for
-a TCP socket connection on a specific port, when the user logs in, for file valid
-file request from a group.
-3 .The chat starting party starts the chat by selecting a group of contacts from
-his contact list and request the server for the online users and and process the
-response accordingly.
-4 If any user is online, a chat room is opened showing the list of online user/users,
-sending the chat request to all the selected online user.
+
+1. A GroupMessageReceive(GMR) Thread is running which is always listening
+   for a TCP socket connection on a specific port, when the user logs in for a
+   message or a new group chat request.
+   
+2. A ReceiveFile Group Thread Thread is running which is always listening for
+   a TCP socket connection on a specific port, when the user logs in, for file valid
+   file request from a group.
+   
+3. The chat starting party starts the chat by selecting a group of contacts from
+   his contact list and request the server for the online users and and process the
+   response accordingly.
+   
+4. If any user is online, a chat room is opened showing the list of online user/users,
+   sending the chat request to all the selected online user.
+   
 · Request contains:
 · - who started the group chat.
-· - A GroupChatCode with the userid, IP details of all the online users in the
-34
-CSE Department, IIT Bombay
-group.
-5 . Whenever a group chat request arrives, the corrosponding GMR thread in
-response accepts the connection it accepts a list of IP address and sets the re-
-ceived GroupChatCode as its own chat code, by this way every online user in
-the chat has the same GroupChatCode.
-6 . A MAP data structure is used to store the IP address and username of each
-user. A groupchat flag is set to true whenever a group chat is started so that no
-other group chat can be start.
-7 . If the requested user is already busy in a chat he sends an exit message to the
-requesting party, and that request is processed.
+· - A GroupChatCode with the userid, IP details of all the online users in the group.
+
+5. Whenever a group chat request arrives, the corrosponding GMR thread in
+   response accepts the connection it accepts a list of IP address and sets the received
+   GroupChatCode as its own chat code, by this way every online user in
+   the chat has the same GroupChatCode.
+   
+6. A MAP data structure is used to store the IP address and username of each
+   user. A groupchat flag is set to true whenever a group chat is started so that no
+   other group chat can be start.
+   
+7. If the requested user is already busy in a chat he sends an exit message to the
+   requesting party, and that request is processed.
+   
 · An Exit message is sent by the busy party to the users in the received userid
-IP list.
+   IP list.
+   
 · The Exit message is interprated as left the room by all the users in the online
-list and message is shown as User Left the room.
-8 . Now online users in the room can either receive a message through a notifica-
-tion(when ever he is on a homescreen ), he can go to the chat room by clicking
-on Show chat button given in the group chat window and continue chat any time
-till all the user are in the room.
+   list and message is shown as User Left the room.
+   
+8 . Now online users in the room can either receive a message through a notification
+   (when ever he is on a homescreen ), he can go to the chat room by clicking
+   on Show chat button given in the group chat window and continue chat any time
+   till all the user are in the room.
+   
 · If no user is in the room a toast is shown for notification.
-8 . Sending of messages are done in seperate threads(done for listening to new
-connection request and proper real time communication in the network and
-avoid delay and latency) for each user in the room (For each person in the
-Map(Containg UID & IP), iteratively a new thread is started to send message).
+
+8. Sending of messages are done in seperate threads(done for listening to new
+   connection request and proper real time communication in the network and
+   avoid delay and latency) for each user in the room (For each person in the
+   Map(Containg UID & IP), iteratively a new thread is started to send message).
+   
 · The sent messages are stored in an ArrayList which contains all the logs of
-messages for the session.
-9 . The GMR threads listnes the message request and spawns a thread to receive
-the message and update the chat window andArraylist both.
-10 . Group file share is also an option, to send file one at a time to all the users of
-that particular chat room.
+   messages for the session.
+   
+9. The GMR threads listnes the message request and spawns a thread to receive
+   the message and update the chat window andArraylist both.
+   
+10. Group file share is also an option, to send file one at a time to all the users of
+   that particular chat room.
+   
 · This is done by creating threads for each user in the room to send file con-
-currently to all users for.
-11 . File receive thread filters file receive request by the group code.
-35
-CSE Department, IIT Bombay
+   currently to all users for.
+   
+11. File receive thread filters file receive request by the group code.
+
 · If group code matches it spawns a new thread which communicates with
-the sending thread to continues to write file onto the disk.
+   the sending thread to continues to write file onto the disk.
+   
 · Notifications are shown for every file receive request and the status(On
-Homescreen a Toast is shown).
+   Homescreen a Toast is shown).
+   
 · Message are logged in the room of user about the file and current status of
-file(Success or Fail(ArrayList Updated)).
+   file(Success or Fail(ArrayList Updated)).
+   
 · A maximum of 3 file simultaneous receive is possible, to minimize the load
-on devices.
+   on devices.
+   
 · While receiving a file, also the user can send a file or chat(Network and
-Device dependent).
+   Device dependent).
+   
 · If ChatGroupode do not matches, it ignores the request.
-12 . The messages for the a group chat session is stored in an ArrayList, which is
-updated by the all the threads which receives a proper message request either
-for a chat message, file share request, Exit requests.
+
+12. The messages for the a group chat session is stored in an ArrayList, which is
+   updated by the all the threads which receives a proper message request either
+   for a chat message, file share request, Exit requests.
+   
 13 .Closes Chat or exits from the Group chat.
+
 · The thread sends an exit message to all the users in its MAP.
+
 · Each receiving part modifies its GroupChatCode to maintain a proper flow
-of data.
+   of data.
+   
 · The MAP is cleared which store user and IP details.
+
 · The ArrayList containing the messages are cleared.
+
 · The group chat flag is set to false and it starts listening new requests.
-· A notification or toast saying
-user has left the chat room.
-14 . Group chat fragments added on start of group chat with selected users .
+
+· A notification or toast saying user has left the chat room.
+
+14 . Group chat fragments added on start of group chat with selected users.
+
 · The client side requests server for IPs of the selected users.
+
 · When the client side receives IP address of the selected users, it saves those
-IP address in a MAP structure with key as username and IP as value.
+   IP address in a MAP structure with key as username and IP as value.
+   
 15 . Now, each person is sent the group code and IP addresses of the rest of the
-persons in the group chat.
-16 . The sending thread either sends a file or a message, and accordingly a receiv-
-ing thread receives the message or file on two different ports.
+   persons in the group chat.
+   
+16 . The sending thread either sends a file or a message, and accordingly a receiving 
+   thread receives the message or file on two different ports.
+   
 · For each person in the map, iteratively a new thread is started to send mes-
-sage/file request.
-36
-CSE Department, IIT Bombay
+   sage/file request.
+
 17 . When other users receive exit message from a particular user, the IP address
 of that user is removed from the MAP and a new group code is generated.
 • Audio Conference Call
