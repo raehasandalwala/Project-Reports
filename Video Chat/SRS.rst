@@ -127,38 +127,45 @@ A detailed user manual and possibly on-line help will be delivered along with th
 4. Android SDK 4.0 or later
 
 5. ADT plugin 18
-1.3
-1.3.1
-SPECIFIC REQUIREMENTS
-External Interface Requirements
-User Interfaces
+
+1.3 SPECIFIC REQUIREMENTS
+`````````````````````````
+1.3.1 External Interface Requirements
+`````````````````````````````````````
+**User Interfaces**
+
 User Interfaces For the “Video-Chat” application, the user interface will provide buttons to lo-
 gin, change settings, start call and end call. The application will have its own contact list to save
 roll no and name of other users.
-4
-CSE Department, IIT Bombay
-5
-CSE Department, IIT Bombay
+
 The user will be notified with proper error messages in case of connection errors. The Server
 software has a simpler user interface. It provides facility to enter a users information for regis-
 tration. It also shows the list of all registered users and indicate whether they are online/offline.
 Request from any user is processed automatically by the server software as long as it is running,
 without any involvement of manual help.
-Hardware Interfaces
+
+**Hardware Interfaces**
+
 • Computer and android device/tablet should be connected to a wi-fi access point.
 • Speaker and an internal/external microphone are also required with the client device.
-Software Interfaces
-Software interface for “Video-Chat” application:
+
+**Software Interfaces**
+
+  Software interface for “Video-Chat” application:
+  
 • Device based on android operating system versions 4.0(API level 14) or greater.
 • Device should provide facility for lightweight Database Management System -SQLite.
-Software interface for “Server” application:
-• Computer with Windows or Linux based operating system (Database Management Sys-
-tem used is MySQL 5.5).
-Communication Interfaces
+
+  Software interface for “Server” application:
+  
+• Computer with Windows or Linux based operating system (Database Management System used is MySQL 5.5).
+
+**Communication Interfaces**
+
 • Product uses UDP protocol for communication between a client and the server.
 • TCP protocol is used to establish all kinds of client to client communication.
 • UDP protocol is used for transmitting the audio and video data between two users during
-the call.
+    the call.
 1.3.2
 Functional Requirements
 Major functions of the Video Chat application:
