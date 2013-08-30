@@ -138,10 +138,19 @@ A detailed user manual and possibly on-line help will be delivered along with th
 `````````````````````````````````````
 **User Interfaces**
 
-User Interfaces For the “Video-Chat” application, the user interface will provide buttons to lo-
-gin, change settings, start call and end call. The application will have its own contact list to save
+User Interfaces For the “Video-Chat” application, the user interface will provide buttons to login, 
+change settings, start call and end call. The application will have its own contact list to save
 roll no and name of other users.
 
+.. image::
+   https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/figures/2.png
+   
+.. image::
+   https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/figures/3.png
+   
+.. image::
+   https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/figures/4.png
+   
 The user will be notified with proper error messages in case of connection errors. The Server
 software has a simpler user interface. It provides facility to enter a users information for regis-
 tration. It also shows the list of all registered users and indicate whether they are online/offline.
@@ -270,6 +279,9 @@ can then be reviewed in order to identify further requirements. This process is 
 producing a new version of the software for each cycle of the model , until the product is ac-
 cepted as shown below:
 
+.. image::
+   https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/figures/5.png
+   
 **A Requirements phase** - in which the requirements for the software are gathered and analyzed.
 Iteration should eventually result in a requirements phase that produces a complete and
 final specification of requirements. 
@@ -301,11 +313,17 @@ and additions to requirements proposed.
 -----------------------------
 2.3.1 High Level Design Document
 `````````````````````````````````
-E-R Diagram
-Server and Client Side
+**E-R Diagram**
 
-Use Case Diagram
+Server and Client Side :
+
+.. image::
+   https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/figures/6.png
+
+**Use Case Diagram**
+
 • Server Application
+
 – Purpose: To maintain a database which has data regarding the clients and to register
 the clients.
 ∗ Providing login requests to the clients.
@@ -314,87 +332,102 @@ the clients.
 ∗ Manipulating data according to the request of clients.
 ∗ Maintaining log of the server.
 
+.. image::
+   https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/figures/7.png
+
 • Audio Call between two users
 – Purpose: to provide cheap facility of audio call between two users
 ∗ First the caller goes through the contact list to select a person to call and then
-holds on it to find the option of calling
+   holds on it to find the option of calling
 ∗ The server checks if the user is available or not, if not it sends the message to
-the caller that the user is not available, and if available it connects the call
+   the caller that the user is not available, and if available it connects the call
 ∗ As soon as the call connects the receiver receives a pop up window showing an
-incoming call which has two options : Accept and Reject.
+   incoming call which has two options : Accept and Reject.
 ∗ The receiver can accept the call by choosing the accept option and the call will
-start and the two persons can communicate with each other.
+   start and the two persons can communicate with each other.
 ∗ The receiver can also reject the call If he choses reject option.
 ∗ If the receiver does not receive the call, a missed call alert is shown.
 ∗ Once the call is accepted the receiver or the caller both have the option to end
-the call, in which cases the communication between them will be put to an end.
+   the call, in which cases the communication between them will be put to an end.
+   
+.. image::
+   https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/figures/8.png
+   
 • Audio call between multiple users
 – Purpose: to provide cheap communication between many users who are within the
-range of Wi-Fi.
+   range of Wi-Fi.
 ∗ The sequence and stimulus is same as that of the two client user call expect that
-the new users are added by the call initiator.
-
+   the new users are added by the call initiator.
 ∗ if one user ends the call ,it doesnt affect the other users who are in the call.
+
+.. image::
+   https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/figures/9.png
+
 • Video call between two users
 – Purpose: to provide cheap video calling between two users who can be connected
-via a Wi-Fi. Sequence events
+   via a Wi-Fi. Sequence events
 ∗ Client can start the video call via the call button, if the other client is available
-the video call is connected and video streams are sent and received at both ends.
+   the video call is connected and video streams are sent and received at both ends.
 ∗ Client can disconnect the call by the stop button.
 ∗ Other functionalities are same as that of the audio call.
-15
-CSE Department, IIT Bombay
+
+.. image::
+   https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/figures/10.png
+
 • File transfer from one user to another
 – Purpose: to send files as attachments which are present in the SD card of the sender
-to receiver which is available on the connected Wi-Fi.
+   to receiver which is available on the connected Wi-Fi.
 ∗ The sender selects the file to be sent via a browse button, selects the contact to
-which the file must be sent and sends the file .
+   which the file must be sent and sends the file .
 ∗ The file is sent only if the other user is available and is logged in.
 ∗ If the file is sent successfully ,a toast is shown at the sender side that the file
-was successfully sent.
+   was successfully sent.
 ∗ If the file couldnt be sent to the other user, it shows the toast that the other user
-is offline.
-16
-CSE Department, IIT Bombay
+   is offline.
 ∗ When the file is received at the receiver side ,the receiver sees a toast that a
-particular file ,from a particular sender is sent to the receiver.
+   particular file ,from a particular sender is sent to the receiver.
+
+.. image::
+   https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/figures/11.png
+   
 • Group Chat application with file sharing.
 – Purpose: To facilitate easy transfer of text and file among multiple users who are
-within the range of wireless connectivity within same network.
+   within the range of wireless connectivity within same network.
 ∗ The user selects multiple/single contact from his contact list and starts the
-Group Chat.
+   Group Chat.
 ∗ A Group Chat is started by checking the list of online users from the server.
 ∗ A notification is sent to all selected online contacts about the Group chat.
 ∗ Each user can now chat with every other user in the Chat room.
-17
-CSE Department, IIT Bombay
 ∗ A file can be selected by clicking the Browse button and can be shared in the
-chat room.
-Class Diagram
+   chat room.
+   
+.. image::
+   https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/figures/12.png   
+   
+**Class Diagram**
 The following diagrams shows different the user defined classes functional in our application:
-18
-CSE Department, IIT Bombay
+
 Login Class
-19
-CSE Department, IIT Bombay
+.. image::
+   https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/figures/13.png
 Home Class
-20
-CSE Department, IIT Bombay
+.. image::
+   https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/figures/14.png
 Video Call Class
-21
-CSE Department, IIT Bombay
+.. image::
+   https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/figures/15.png
 Audio Conferencing Class
-22
-CSE Department, IIT Bombay
+.. image::
+   https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/figures/16.png
 Group Chat Class
-23
-CSE Department, IIT Bombay
+.. image::
+   https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/figures/17.png
 File Sharing Class
-24
-CSE Department, IIT Bombay
+.. image::
+   https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/figures/18.png
 Server Class
-25
-CSE Department, IIT Bombay
+.. image::
+   https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/figures/19.png
 Functions of different Classes
 1. CLIENT:
 • DataBaseHandler : This class handles the client side database. When
