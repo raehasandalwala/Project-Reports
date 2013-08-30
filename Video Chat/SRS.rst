@@ -863,80 +863,94 @@ on remote clients side which has accept and reject option.
 
 · A notification or toast saying user has left the chat room.
 
-14 . Group chat fragments added on start of group chat with selected users.
+14. Group chat fragments added on start of group chat with selected users.
 
 · The client side requests server for IPs of the selected users.
 
 · When the client side receives IP address of the selected users, it saves those
-   IP address in a MAP structure with key as username and IP as value.
+  IP address in a MAP structure with key as username and IP as value.
    
-15 . Now, each person is sent the group code and IP addresses of the rest of the
+15. Now, each person is sent the group code and IP addresses of the rest of the
    persons in the group chat.
    
-16 . The sending thread either sends a file or a message, and accordingly a receiving 
+16. The sending thread either sends a file or a message, and accordingly a receiving 
    thread receives the message or file on two different ports.
    
 · For each person in the map, iteratively a new thread is started to send mes-
    sage/file request.
 
-17 . When other users receive exit message from a particular user, the IP address
+17. When other users receive exit message from a particular user, the IP address
 of that user is removed from the MAP and a new group code is generated.
+
 • Audio Conference Call
+
 1 . A GroupAudioCallReceive(GACR) Thread is running which is always listening
-for a TCP socket connection on a specific port, when the user logs in for an audio
-conference call request.
-2 . The audio conference starting party starts the call by selecting a group of contacts
-from his contact list and request the server for the online users and and process the
-response accordingly.
-3 . If any user is online, then audio call request is sent to him/her.
+   for a TCP socket connection on a specific port, when the user logs in for an audio
+   conference call request.
+   
+2. The audio conference starting party starts the call by selecting a group of contacts
+   from his contact list and request the server for the online users and and process the
+   response accordingly.
+   
+3. If any user is online, then audio call request is sent to him/her.
+
 ∗ Request contains:
+
 ∗ - Who started the Audio Conference Call.
+
 ∗ - A GroupAudioCode with the userid, IP details of all the online users in the
-group.
-37
-CSE Department, IIT Bombay
-4 . Whenever an Audio Conference Call request arrives, the corrosponding GACR
-thread in response accepts the connection along with a list of IP address and sets the
-received GroupAudioCode as its own audio call code, by this way every online user
-in the chat has the same GroupAudioCode.
-5 . Two MAP data structures are used to store the IP address, username (in first) and
-IP address, flag whose default value is set to false for all users (in second) of each
-user. A groupaudio flag is set to true whenever an audio conference call is started
-so that no other audio call can be started.
-6 . At the receiving end,
-i if the user accepts the call, then the flag value in second map for corresponding
+   group.
+
+4. Whenever an Audio Conference Call request arrives, the corrosponding GACR
+   thread in response accepts the connection along with a list of IP address and sets the
+   received GroupAudioCode as its own audio call code, by this way every online user
+   in the chat has the same GroupAudioCode.
+   
+5. Two MAP data structures are used to store the IP address, username (in first) and
+   IP address, flag whose default value is set to false for all users (in second) of each
+   user. A groupaudio flag is set to true whenever an audio conference call is started
+   so that no other audio call can be started.
+   
+6. At the receiving end,
+
+i. if the user accepts the call, then the flag value in second map for corresponding
 user is updated to true.
-∗ An accept message is sent to all others listed in the first map .
+
+∗ An accept message is sent to all others listed in the first map.
+
 ∗ RecordSend Thread and PlayAudio thread are started for recording & sending
-audio and receiving & playing audio respectively.
-ii if the user rejects the call, then an exit message is sent to all other users whose
+   audio and receiving & playing audio respectively.
+   
+ii. if the user rejects the call, then an exit message is sent to all other users whose
 IPs’ are in first map.
+
 ∗ The corresponding sockets are closed, the maps are cleared and a Toast is shown
 that “You have Rejected the Call”.
+
 7 . At the initiator of the call, a Toast is displayed “User has accepted your Call”,
-and the corresponding RecordSend & PlayAudio thread are invoked.
+   and the corresponding RecordSend & PlayAudio thread are invoked.
+   
 8 . The users can now talk over the Tablets.
+
 9 . On either end, if the user leaves the audio conference call, then at first an exit
-message is sent to all other users in his maps whose flag value are true.
+   message is sent to all other users in his maps whose flag value are true.
+   
 10 . Then all the sockets are closed, maps, flags are cleared and a Toast is shown on
 others users end that “User has left the Call”.
 11 . If there are more then two users in the Audio Call, then even if one of them leaves
 the call(even being the initiator of the call), still others can continue their Call as
 only the leaving user flag is set false in their maps.
-38
-CSE Department, IIT Bombay
-2.3.4 Interface Design:
-2.4
-CHALLENGES AND THEIR SOLUTIONS
+
+2.4 CHALLENGES AND THEIR SOLUTIONS
+``````````````````````````````````
 • Audio call
-1 . Voice distortion
-2 . Lag in audio call
-3 . Network problem
-4 . On usage of thread there is lot of disturbance with 0 lag, on the other hand, if
-thread is removed there is lesser disturbance but lag is more.
-39
-CSE Department, IIT Bombay
-5 . Not feasible options
+1. Voice distortion
+2. Lag in audio call
+3. Network problem
+4. On usage of thread there is lot of disturbance with 0 lag, on the other hand, if
+   thread is removed there is lesser disturbance but lag is more.
+
+5. Not feasible options
 ∗ Using different ports for different users was not a feasible option for audio call
 ∗ Using different threads for different users due to disturbance
 • Video Call
