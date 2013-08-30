@@ -363,24 +363,19 @@ Server and Client Side :
 
 – Purpose: to provide cheap facility of audio call between two users
 
-   ∗ First the caller goes through the contact list to select a person to call and then
-     holds on it to find the option of calling.
+   ∗ First the caller goes through the contact list to select a person to call and then holds on it to find the option of calling.
      
-   ∗ The server checks if the user is available or not, if not it sends the message to
-     the caller that the user is not available, and if available it connects the call.
+   ∗ The server checks if the user is available or not, if not it sends the message to the caller that the user is not available, and if available it connects the call.
      
-   ∗ As soon as the call connects the receiver receives a pop up window showing an
-     incoming call which has two options : Accept and Reject.
+   ∗ As soon as the call connects the receiver receives a pop up window showing an incoming call which has two options : Accept and Reject.
      
-   ∗ The receiver can accept the call by choosing the accept option and the call will
-     start and the two persons can communicate with each other.
+   ∗ The receiver can accept the call by choosing the accept option and the call will start and the two persons can communicate with each other.
      
    ∗ The receiver can also reject the call If he choses reject option.
    
    ∗ If the receiver does not receive the call, a missed call alert is shown.
    
-   ∗ Once the call is accepted the receiver or the caller both have the option to end
-     the call, in which cases the communication between them will be put to an end.
+   ∗ Once the call is accepted the receiver or the caller both have the option to end the call, in which cases the communication between them will be put to an end.
    
 .. image::
    https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/figures/8.png
@@ -390,8 +385,7 @@ Server and Client Side :
 – Purpose: to provide cheap communication between many users who are within the
   range of Wi-Fi.
   
-   ∗ The sequence and stimulus is same as that of the two client user call expect that
-     the new users are added by the call initiator.
+   ∗ The sequence and stimulus is same as that of the two client user call expect that the new users are added by the call initiator.
      
    ∗ if one user ends the call ,it doesnt affect the other users who are in the call.
 
@@ -400,15 +394,13 @@ Server and Client Side :
 
 • Video call between two users
 
-– Purpose: to provide cheap video calling between two users who can be connected
-   via a Wi-Fi. Sequence events.
+– Purpose: to provide cheap video calling between two users who can be connected via a Wi-Fi. Sequence events.
    
-∗ Client can start the video call via the call button, if the other client is available
-   the video call is connected and video streams are sent and received at both ends.
+   ∗ Client can start the video call via the call button, if the other client is available the video call is connected and video streams are sent and received at both ends.
    
-∗ Client can disconnect the call by the stop button.
+   ∗ Client can disconnect the call by the stop button.
 
-∗ Other functionalities are same as that of the audio call.
+   ∗ Other functionalities are same as that of the audio call.
 
 .. image::
    https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/figures/10.png
@@ -671,6 +663,7 @@ Functions of different Classes
 2.3.2 Data Flow Diagram
 ~~~~~~~~~~~~~~~~~~~~~~~~
 • Video Conferencing Application
+
 2.3.3 Low Level Design Document
 Algorithm & Flowchart
 • Audio Call
