@@ -166,39 +166,47 @@ without any involvement of manual help.
 • TCP protocol is used to establish all kinds of client to client communication.
 • UDP protocol is used for transmitting the audio and video data between two users during
     the call.
-1.3.2
-Functional Requirements
-Major functions of the Video Chat application:
+    
+1.3.2 Functional Requirements
+`````````````````````````````
+**Major functions of the Video Chat application:**
+
 • Authenticate and Login user to the server.
 • Initiate Peer-to-Peer Audio call, Video Call, File Share, Group Chat, Audio Conferencing.
-6
-CSE Department, IIT Bombay
 • Receive different requests like Audio Call receiving, Video Call receiving, File receiving.
 • A Contact List is provided where the user may add additional contacts.
 • User may set the frequency for audio communication and IP of the Server.
-Major functions of the Server software:
+
+**Major functions of the Server software:**
+
 • New users can be registered and unregistered.
 • Keeps track of online and offline users .
 • Maintains a log of all the client requests.
 • View Present state of Database at any point of time.
+
 1.3.3 Performance Requirements
+`````````````````````````````
 1. Any transaction between a client and the server will take approximately not more than 3
-seconds.
+    seconds.
+    
 2. Establishing a call connection between two clients take approximately not more than 4
-seconds.
+    seconds.
+    
 3. The lag in the audio and video data being transferred between the two users during call
-will be approximately not more than 3 seconds.
+    will be approximately not more than 3 seconds.
+    
 4. Any no. of users may be logged-in at the server at any time.
+
 5. All the users need to be connected to same/different access points of the same network.
 6. The “Video-Chat” application should be light to minimise the power consumption of the
-device.
-7
-CHAPTER NO.
-2
-DESIGN DOCUMENTS
-2.1
-INTRODUCTION
+    device.
+
+CHAPTER 2 : DESIGN DOCUMENTS
+============================
+2.1 INTRODUCTION
+----------------
 2.1.1 Background
+````````````````
 Aakash, the low cost Indian android-based tablet, can be used in a variety of ways to spread
 literacy and education in the country. It is an excellent device which can be used by Indian
 students and teachers to cater their needs. There are many efforts going on in IIT Bombay
@@ -207,18 +215,21 @@ developing an android application focusing on Peer-to-Peer Audio and Video Confe
 Group Chat, and File Sharing between Aakash tablets through Wi-Fi connectivity since the
 existing GSM facility involves a cost factor. Our objective was to provide free communication
 between the tablets by taking help of its Wi-Fi connectivity.
+
 2.1.2 Design Goals
+```````````````````
 Peer-to-Peer Video Conferencing was our main design goal. It was very important to make
 the video quality good in this kind of voice communication application. Minimum lag in the
 transmission was also one of the design goals. Along with this, Audio Conferencing, Group
 Chat, Group File Sharing were also our goals. This application involves very basic use of
 server since it is based on Peer-to-Peer Communication.
-8
-CSE Department, IIT Bombay
-2.2
-PROJECT PLAN
+
+2.2 PROJECT PLAN
+----------------
 2.2.1 Title and Scope of the Project
-Title: Video Conferencing
+````````````````````````````````````
+**Title: Video Conferencing**
+
 Scope: The software Video Conferencing is an application that will be used by general users
 for peer-to-peer communication like audio and video conferencing, group chat, file sharing etc
 using Aakash tablets. To use any functionality of the application, the user needs to be registered
@@ -228,40 +239,47 @@ server. An application Server is required to register the users and maintain the
 regarding the MAC, current IP addresses, username, password and availability status of all the
 logged-in users. The clients may be connected to same/different WiFi given both the routers are
 registered at the same network. Server must be connected to same WiFi network.
+
 2.2.2 Resource Requirements
-Hardware Requirements
+```````````````````````````
+**Hardware Requirements**
+
 • The Server (Desktop/tablet) and Client (tablet) should have WiFi connectivity.
 • To use the Video Conferencing application a headphone or headset and an internal micro-
-phone is required with the device.
-Software Requirements
-• Software interface for Video Conferencing application
+    phone is required with the device.
+    
+**Software Requirements**
+• Software interface for Video Conferencing application :
 – Any device based on android operating system versions 4.0.3 and higher.
 – Support for lightweight Database Management System SQLite.
 • Software interface for Server software :
-– Any computer with windows or linux based operating system (Database Manage-
-ment System used is MySQL).
+– Any computer with windows or linux based operating system (Database Management
+    System used is MySQL).
 – Any device based on android operating system versions 4.0.3 and higher (Database
-Management system used is SQLite).
-9
-CSE Department, IIT Bombay
+    Management system used is SQLite).
+
 2.2.3 Model Used (Iterative Model)
+``````````````````````````````````
 The Iterative lifecycle model does not attempt to start with a full specification of requirements.
 Instead, development begins by specifying and implementing just part of the software, which
 can then be reviewed in order to identify further requirements. This process is then repeated,
 producing a new version of the software for each cycle of the model , until the product is ac-
 cepted as shown below:
-A Requirements phase - in which the requirements for the software are gathered and ana-
-lyzed. Iteration should eventually result in a requirements phase that produces a complete and
-final specification of requirements. A Design phase - in which a software solution to meet the
+
+**A Requirements phase** - in which the requirements for the software are gathered and analyzed.
+Iteration should eventually result in a requirements phase that produces a complete and
+final specification of requirements. 
+
+**A Design phase** - in which a software solution to meet the
 requirements is designed. This may be a new design, or an extension of an earlier design. An
-Implementation and Test phase - when the software is coded, integrated and tested. A Review
-phase - in which the software is evaluated, the current requirements are reviewed, and changes
+Implementation and Test phase - when the software is coded, integrated and tested. 
+**A Review phase** - in which the software is evaluated, the current requirements are reviewed, and changes
 and additions to requirements proposed.
+
 2.2.4 Task List
+````````````````
 1 . Establish Connection between Server and Client using WiFi.
 2 . Establishing Peer to Peer Connection.
-10
-CSE Department, IIT Bombay
 3 . Database Management and Database Connectivity.
 4 . Parsing the Messages in the server and updating the Database.
 5 . Fetching IPs’ of all available users from server.
@@ -274,11 +292,11 @@ CSE Department, IIT Bombay
 12 . Video Call Testing
 13 . Audio Conference Call Testing
 14 . Group Chat Testing along with Group File Sharing
-11
-CSE Department, IIT Bombay
-2.3
-DESIGN AND IMPLEMENTATION
+
+2.3 DESIGN AND IMPLEMENTATION
+-----------------------------
 2.3.1 High Level Design Document
+`````````````````````````````````
 E-R Diagram
 Server and Client Side
 12
