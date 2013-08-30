@@ -332,8 +332,8 @@ and additions to requirements proposed.
 -----------------------------
 2.3.1 High Level Design Document
 `````````````````````````````````
-**E-R Diagram**
-
+E-R Diagram
+~~~~~~~~~~~
 Server and Client Side :
 
 .. image::
@@ -401,36 +401,29 @@ Server and Client Side :
    https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/figures/10.png
 
 • File transfer from one user to another
-– Purpose: to send files as attachments which are present in the SD card of the sender
-   to receiver which is available on the connected Wi-Fi.
-∗ The sender selects the file to be sent via a browse button, selects the contact to
-   which the file must be sent and sends the file .
+– Purpose: to send files as attachments which are present in the SD card of the sender to receiver which is available on the connected Wi-Fi.
+∗ The sender selects the file to be sent via a browse button, selects the contact to which the file must be sent and sends the file .
 ∗ The file is sent only if the other user is available and is logged in.
-∗ If the file is sent successfully ,a toast is shown at the sender side that the file
-   was successfully sent.
-∗ If the file couldnt be sent to the other user, it shows the toast that the other user
-   is offline.
-∗ When the file is received at the receiver side ,the receiver sees a toast that a
-   particular file ,from a particular sender is sent to the receiver.
+∗ If the file is sent successfully ,a toast is shown at the sender side that the file was successfully sent.
+∗ If the file couldnt be sent to the other user, it shows the toast that the other user is offline.
+∗ When the file is received at the receiver side ,the receiver sees a toast that a particular file ,from a particular sender is sent to the receiver.
 
 .. image::
    https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/figures/11.png
    
 • Group Chat application with file sharing.
-– Purpose: To facilitate easy transfer of text and file among multiple users who are
-   within the range of wireless connectivity within same network.
-∗ The user selects multiple/single contact from his contact list and starts the
-   Group Chat.
+– Purpose: To facilitate easy transfer of text and file among multiple users who are within the range of wireless connectivity within same network.
+∗ The user selects multiple/single contact from his contact list and starts the Group Chat.
 ∗ A Group Chat is started by checking the list of online users from the server.
 ∗ A notification is sent to all selected online contacts about the Group chat.
 ∗ Each user can now chat with every other user in the Chat room.
-∗ A file can be selected by clicking the Browse button and can be shared in the
-   chat room.
+∗ A file can be selected by clicking the Browse button and can be shared in the chat room.
    
 .. image::
    https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/figures/12.png   
    
 **Class Diagram**
+~~~~~~~~~~~~~~~~
 The following diagrams shows different the user defined classes functional in our application:
 
 Login Class
@@ -469,151 +462,192 @@ Server Class
    https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/figures/19.png
    
 Functions of different Classes
-1. CLIENT:
+``````````````````````````````
+**1. CLIENT:**
+
 • DataBaseHandler : This class handles the client side database. When
 first time application is installed, it creates a database contactManager with
 three fields uid, name and owner. Primary key is uid+owner. Database
 stores all the contact saved on the device. This class handles the operations
 like add contact, delete contact in the contact list.
+
 • TcpActivityAudio : This thread listens for incoming call requests from all
 the users registered with server. When user receives a call It shows a alert
 box with two options accept or reject. It creates a tcp connection with the
 caller. And it sends and receives all the control messages during the call.
 This tcp connection closes when either of side ends the call.
+
 • TcpActivityFile : This thread listens for incoming fil transfer requests
 from all the users registered with server. When user receives a request
 It shows a alert box with two options accept or reject. It creates a tcp
 connection with the caller. When user accept or reject the call, this tcp
 connection is closed. Receive file Thread receives the file in background.
+
 • TcpActivityVideo : This thread listens for incoming video call requests
 from all the users registered with server. When user receives a video call
 It shows a alert box with two options accept or reject. It creates a tcp con-
 nection with the caller. And it sends and receives all the control messages
 during the call. This tcp connection closes when either of side ends the
 call.
+
 • AccepCallThread : This thread starts working when user accepts the au-
 dio call.
+
 • RejectCallThread : This thread starts working when user rejects the video
 call.
+
 • AccepCallThreadF : This thread starts working when user accepts the file
 transfer request.
-26
-CSE Department, IIT Bombay
+
 • RejectCallThreadF : This thread starts working when user rejects the file
 transfer request.
+
 • AccepCallThreadV : This thread starts working when user accepts the
 video call request.
+
 • RejectCallThreadV : This thread starts working when user rejects the
 video call request.
+
 • PlayAudio : This thread starts working when a audio call starts. It plays
 the UDP audio packets received from remote user.
+
 • RecordSend : This thread starts when a audio call starts, It forms UDP
 audio packets and send them to remote users.
+
 • TcpConnection(Audio) : This thread makes a TCP connection with re-
 mote user when user makes audio call.
+
 • Contact : This class has two fields uid and name. Object of this class
 represent the contact.
+
 • ContactsFrag : This class maintains all the contact activities.
 When user select a contact for audio/video/file this class initiates the threads
 AudioConnection/VideoConnection/ConnectionProgress.
+
 • AudioConnectionProgress : This thread starts working, when user se-
 lects a contact for audio call. It shows the message like “user is not on-
 line”,“contact is not registered on server” or “user is busy”. If user is online
 it receives the IP of user from server and makes audio call.
+
 • VideoConnectionProgress : This thread starts working, when user se-
 lects a contact for video call. It shows the message like “user is not on-
 line”,“contact is not registered on server” or “user is busy”. If user is online
 it receives the IP of user from server and makes video call.
+
 • ConnectionProgress : This thread starts working, when user selects a
 contact for file transfer. It shows the message like “user is not online”,“contact
 is not registered on server” or “user is busy”. If user is online it receives
 the IP of user from server and makes file transfer request to remote user.
-27
-CSE Department, IIT Bombay
+
 • SettingsFrag : This class is used to change password. User have to pro-
 vide three things: Old password, new password and confirm passwod.
+
 • FileShare : This class starts working when user makes a file transfer re-
 quest to remote user.
+
 • TcpConnection(File) : It establishes a TCP connection with remote user
 to make a file transfer request.
+
 • SendAsynFile : This background process starts when user send a file to
 remote user.It shows a dialogue box to show the amount of file transferred.
+
 • Login : This class loads when user starts the app. It fetches the user
 preferences(server IP) saved on userthe device and send the login request
 to the server. On succesful login Home intent is opened.
+
 • PrefActivity : This class save the preferences of user on the device. User
 can give his preference on the login page.
+
 • Group audio conference call : This class handles the main functionality
 of retrieving Ip’s of selected users(for audio conference) from the server
 and sending them appropriate messages on clicking “start conference” and
 “stop conference” button.
+
 • SendIp : This class sends the List of Ip’s of all the users selected in the
 audio conference, to each and every user in the conference. This class
 starts when conference initiator starts the conference.
+
 • SendAudioMessage : This class is used to send audio conference starting
 request to the selected users from audio conferencing page.
+
 • Send exit message : This class is used to send exit message to all the
 users in the conference call. This class is invoked when any user leaves the
 conference.
+
 • ContactAdapter : This class creates a view for displaying the contacts of
 the user with a checkbox(for selecting them for audio conference).
+
 • FetchAsyncIp : This class fetches Ip’s of selected users(for audio confer-
 ence) from the server.
-28
-CSE Department, IIT Bombay
+
 • Group audio conference receive : This class handles the functionality
 of receiving audio conference requests from other users and also actions to
 be taken after receiving different types of requests.
+
 • SendAcceptFlag : This class sends a confirmation to all users in the con-
 ference call that he she has accepted the call request and is now starting
 communication.
+
 • saveMessages append : This class decodes messages received from other
 users and performs actions according to received messages.
+
 • Send exit message : This class is used to send message to all other users
 in the conference call that he she has rejected the conference request.
+
 • Group chat list : This class extends the fragment class, which is used to
 generate the list of friends added by the user in the contats in the selected
 fragment of group chat. Also the implementation of this class starts the
 group chat between all the selected friends from the contact list by fetching
 the IP address from the server.
+
 • GroupchatActivity : This is the main UI class for having a group chat,
 this class has its own layout for showing messages, the list for showing
 online users and selecting the file and sending the same to the whole group.
 The messages and file are sent in seperate threads to all the selected friends.
+
 • SendMessage : Inner class of group chat activity to send messages to the
 friends selected in the group chat.
-• group message receive thread : A seperate thread which starts at the
+
+• Group message receive thread : A seperate thread which starts at the
 home page, the thread handles all the messages requests on a particular
 port, either it is a new group chat request or a new message or an exit
 message. This thread also replies for a bad request.
+
 • SendFile Group Thread : A thread class which spawn seperate threads
 and manages all the spawned threads for sending, completion, failures of
 the specified file to all the friends in the group simulataneously.
+
 • ReceiveFile Group Thread : A thread class which spawn seperate threads
 and manages all the spawned threads for validating file request with group
-29
-CSE Department, IIT Bombay
 code start receiving, completion, failures of the file from the sending party,
 a maximum of 3 simultaneously receive is possible.
+
 • Send exit message : A thread class to inform all the friends in selected
 group that the he has left the chat.
+
 2. SERVER:
 • VDOServer: It initiates the OnlineChecker and ServerTime threads. It
 continuously listens at port 6500 for all client requests. It creates a new
 ProcessPacket thread to process each received packet from a client.
+
 • OnlineChecker:This class pings each online client every 5 minutes. If it
 does not receive a reply it updates the database to mark the client as offline.
+
 • ServerTime: Send the current time of the server to the requesting clients.
+
 • ServerSetup: sets up the mysql server and connects to it by taking the
-details from admin
+details from admin.
+
 • Layout:consists the main server frame
+
 • ListUsers: shows the present number of online and offline users with their
-names
+names.
+
 • UserRegistration: registers a user, deletes him from the database and
-forcefully kicks him out of the server when required
-30
-CSE Department, IIT Bombay
+forcefully kicks him out of the server when required.
+
 2.3.2 Data Flow Diagram
+~~~~~~~~~~~~~~~~~~~~~~~~
 • Video Conferencing Application
 2.3.3 Low Level Design Document
 Algorithm & Flowchart
