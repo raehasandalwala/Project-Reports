@@ -1,4 +1,6 @@
 ACKNOWLEDGEMENT
+===============
+
 We take this opportunity to express our profound gratitude and deep regards to Professor Deepak
 B. Phatak for offering us this internship at IIT Bombay and handling us the responsibility of this
 project. His willingness to motivate us contributed tremendously to our project. The blessing,
@@ -7,25 +9,34 @@ We are thankful to our project’s mentor Mr. Parag Tiwari and our guide Ms. Pra
 Mohite, for their exemplary guidance, monitoring and constant encouragement throughout the
 project. We thank them for their cordial support and valuable information which helped us in
 completing this task through various stages.
-Also, we would like to extend our sincere regards to all the non-teaching staff at IIT Bom-
-bay for their timely support. Although, there may be many who remain unacknowledged in this
+
+Also, we would like to extend our sincere regards to all the non-teaching staff at IIT Bombay
+for their timely support. Although, there may be many who remain unacknowledged in this
 humble note of gratitude, but there are none who remain unappreciated.
+
 Ajay Kumar
+
 Cheena Jain
+
 Manisha Barnwal
+
 Nishant Chaubey
+
 Prashant Aher
+
 Ruchit Gandhi
+
 Sankalp Rangare
+
 Shreshtha Pankaj
+
 Sumantra Chattopadhyay
 
-CHAPTER NO.
-1
-SOFTWARE REQUIREMENT
-SPECIFICATION
-1.1
-INTRODUCTION
+CHAPTER 1 : SOFTWARE REQUIREMENT SPECIFICATION
+==================================================
+
+1.1 INTRODUCTION
+----------------
 The document aims at defining the overall software requirements for “Video-Chat” and Server
 side application. Efforts are been made to define the requirement exhaustively and accurately.
 The final product will be having only features/functionalities mentioned in this document and
@@ -33,48 +44,65 @@ assumption for any additional functionality/feature should not be made by any of
 involved in developing /testing/implementing the products. In case it is required to have some
 additional features, a formal change request will need to be raised and subsequently a new
 release of this document and/or product will be produced.
+
 1.1.1 Purpose
+``````````````
 This specification document describes the capabilities that will be provided by the android ap-
 plications “Video Chat” and “Server”. It also states the various required constraints by which
 the system will abide. The intended audience for this document is the development team, testing
 team and the users of the product.
+
 1.1.2 Scope
+```````````
 The software “Video Chat” is an application that will be used by general users to do chat, file
 share, voice calls and video calls using Aakash tablet. Also audio and chat conferencing facility
-1
-CSE Department, IIT Bombay
 has been provided. To make a call both the users need to be registered at the server. This
 communication is via wi-fi and will incur no expenditure to the end users. Communication
 between any two users will be enabled as long as both are logged-in at the server.
 An application “Server” is required to register the users and maintain the information regarding
 the MAC and current IP addresses of all the logged-in users. The clients and server must be
 connected to same network.
+
 1.1.3 Overview
+``````````````
 The intended audience for this document is the development team, testing team and the users of
 the product.
-1.2
-OVERALL DESCRIPTION
+
+1.2 OVERALL DESCRIPTION
+------------------------
 In the present day where communication plays such an important role in day-to-day activity,
 this product was proposed with the aim to provide free communication over smaller distance
 eg. within an organization campus. This product is a part of Aakash tablet.
 “Video Chat” application can be implemented on any android based device.
-2
-CSE Department, IIT Bombay
+
 1.2.1 Product Functionality
+```````````````````````````
 Major functions of the “Video Chat” application:
-1. Connect and Login with the desired server.
-2. Initiate a communication to any available user in following ways:
-Perform text chat with an online user
-Add more users to the current chat
-Share Files with one or more than one users
-Initiate and receive audio call to and from available user
-Initiate and receive video call to and from available user
+
+#. Connect and Login with the desired server.
+
+#. Initiate a communication to any available user in following ways:
+
+    Perform text chat with an online user.
+
+    Add more users to the current chat.
+
+    Share Files with one or more than one users.
+
+    Initiate and receive audio call to and from available user.
+
+    Initiate and receive video call to and from available user.
+
 Major functions of the “Desktop Server” software:
+
 1. Register the user who wish to use this product and allocate them tablet a unique username.
+
 2. Login and logout the users when they start and close their application respectively.
+
 3. Exchange IP addresses between two available users in the network.
-1.2.2
-Operating Environment
+
+1.2.2 Operating Environment
+```````````````````````````
 The application “Video-Chat” will be developed to operate on any android based devices,
 like mobile phones and tablets with android versions 4.0 (API level 14) or greater. It
 requires a wi-fi connection facility in the device. For voice communication a speaker and
