@@ -746,6 +746,9 @@ d. The sending thread on both the clients prepare and extract the packets to be
 
 ∗ While the file is being sent, a progress bar is shown and the file is sent in the background using Group Chat. 
 
+.. image::
+   https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/figures/21.png
+
 **Algorithm for group Chat and Group File Share**
 
 1. A GroupMessageReceive(GMR) Thread is running which is always listening
@@ -848,6 +851,9 @@ d. The sending thread on both the clients prepare and extract the packets to be
 
 17. When other users receive exit message from a particular user, the IP address of that user is removed from the MAP and a new group code is generated.
 
+.. image::
+   https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/figures/22.png
+
 • Audio Conference Call
 
 1. A GroupAudioCallReceive(GACR) Thread is running which is always listening
@@ -905,6 +911,12 @@ ii. if the user rejects the call, then an exit message is sent to all other user
     the call(even being the initiator of the call), still others can continue their Call as
     only the leaving user flag is set false in their maps.
 
+.. image::
+   https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/figures/23.png
+
+.. image::
+   https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/figures/24png
+   
 2.4 CHALLENGES AND THEIR SOLUTIONS
 ``````````````````````````````````
 •**Audio call**
