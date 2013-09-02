@@ -864,8 +864,7 @@ d. The sending thread on both the clients prepare and extract the packets to be
 
 ∗ - Who started the Audio Conference Call.
 
-∗ - A GroupAudioCode with the userid, IP details of all the online users in the
-   group.
+∗ - A GroupAudioCode with the userid, IP details of all the online users in the group.
 
 4. Whenever an Audio Conference Call request arrives, the corrosponding GACR
    thread in response accepts the connection along with a list of IP address and sets the
@@ -884,14 +883,12 @@ i. if the user accepts the call, then the flag value in second map for correspon
 
 ∗ An accept message is sent to all others listed in the first map.
 
-∗ RecordSend Thread and PlayAudio thread are started for recording & sending
-  audio and receiving & playing audio respectively.
+∗ RecordSend Thread and PlayAudio thread are started for recording & sending audio and receiving & playing audio respectively.
    
 ii. if the user rejects the call, then an exit message is sent to all other users whose
     IPs’ are in first map.
 
-∗ The corresponding sockets are closed, the maps are cleared and a Toast is shown
-  that “You have Rejected the Call”.
+∗ The corresponding sockets are closed, the maps are cleared and a Toast is shown that “You have Rejected the Call”.
 
 7. At the initiator of the call, a Toast is displayed “User has accepted your Call”,
    and the corresponding RecordSend & PlayAudio thread are invoked.
