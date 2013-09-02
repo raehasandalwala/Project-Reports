@@ -712,32 +712,28 @@ c. If Client B accepts the call, Client A is notified to start sending and recei
 d. The sending thread on both the clients prepare and extract the packets to be
    sent in following way.
 
-· Camera sends frames, which is compressed to JPEG for memory consumption 
-  to the thread one by one which is combined with the audio recorded
+· Camera sends frames, which is compressed to JPEG for memory consumption to the thread one by one which is combined with the audio recorded
   in the buffer and a packet is formed which is sent via UDP connection as a
   datagram packet.
    
-· Along with audio and video data, audio length, video length and frame
-  numbers are also inserted in the packet.
+· Along with audio and video data, audio length, video length and frame numbers are also inserted in the packet.
    
-· The receiving thread receives the packet and extracts the audio and video
-  data in different buffers. The JPEG image is drawn on canvas and the audio
+· The receiving thread receives the packet and extracts the audio and video data in different buffers. The JPEG image is drawn on canvas and the audio
   is fed to track to be played.
    
-5 . Any Client can end the call at any point of time. Then the other client is
-   notified about the end of call.
+5. Any Client can end the call at any point of time. Then the other client is notified about the end of call.
    
 – File Share Assuming that the client A and B are online:
 
-1 . A receiving thread always runs in the background of activity which listens to the incoming request of file share from remote client.
+1. A receiving thread always runs in the background of activity which listens to the incoming request of file share from remote client.
 
-2 . Client A selects a user from contacts list and selects file share option.
+2. Client A selects a user from contacts list and selects file share option.
 
-3 . A message is sent to server about the type of operation i.e. file share in this case with username and UId.
+3. A message is sent to server about the type of operation i.e. file share in this case with username and UId.
 
-4 . The server returns the IP address corresponding to that UID.
+4. The server returns the IP address corresponding to that UID.
 
-5 . A TCP request is forwarded to remote client which opens a pop-up window on remote clients side which has accept and reject option.
+5. A TCP request is forwarded to remote client which opens a pop-up window on remote clients side which has accept and reject option.
 
 · If remote client selects accept, then Client A is notified that the remote client has accepted the request.
    
