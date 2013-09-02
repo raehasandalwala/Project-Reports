@@ -631,9 +631,7 @@ Functions of different Classes
   group that the he has left the chat.
 
 2. SERVER:
-• VDOServer: It initiates the OnlineChecker and ServerTime threads. It
-  continuously listens at port 6500 for all client requests. It creates a new
-  ProcessPacket thread to process each received packet from a client.
+• VDOServer: It initiates the OnlineChecker and ServerTime threads. It continuously listens at port 6500 for all client requests. It creates a new ProcessPacket thread to process each received packet from a client.
 
 • OnlineChecker:This class pings each online client every 5 minutes. If it
   does not receive a reply it updates the database to mark the client as offline.
@@ -731,38 +729,30 @@ d. The sending thread on both the clients prepare and extract the packets to be
    
 – File Share Assuming that the client A and B are online:
 
-1 . A receiving thread always runs in the background of activity which listens to
-the incoming request of file share from remote client.
+1 . A receiving thread always runs in the background of activity which listens to the incoming request of file share from remote client.
 
 2 . Client A selects a user from contacts list and selects file share option.
 
-3 . A message is sent to server about the type of operation i.e. file share in this
-case with username and UId.
+3 . A message is sent to server about the type of operation i.e. file share in this case with username and UId.
 
 4 . The server returns the IP address corresponding to that UID.
 
-5 . A TCP request is forwarded to remote client which opens a pop-up window
-on remote clients side which has accept and reject option.
+5 . A TCP request is forwarded to remote client which opens a pop-up window on remote clients side which has accept and reject option.
 
-· If remote client selects accept, then Client A is notified that the remote
-   client has accepted the request.
+· If remote client selects accept, then Client A is notified that the remote client has accepted the request.
    
-· Client A is taken to the main thread of file share where it can select the file
-   to be sent by OPEN button.
+· Client A is taken to the main thread of file share where it can select the file to be sent by OPEN button.
    
 · It gives the list of the contents of SD card to be selected for file transfer.
 
-· Once a file is selected, it can then be sent to the remote client by clicking
-   on the sent button.
+· Once a file is selected, it can then be sent to the remote client by clicking on the sent button.
    
-· If the remote user rejects the request for file share, a message is sent to
-   Client A that its request has been rejected.
+· If the remote user rejects the request for file share, a message is sent to Client A that its request has been rejected.
    
 ∗ It uses TCP protocol to send the file to remote client.
-∗ While the file is being sent, a progress bar is shown and the file is sent in the
-   background using
+∗ While the file is being sent, a progress bar is shown and the file is sent in the background using Group Chat. 
 
-– Group Chat. Algorithm for group Chat and Group File Share
+**Algorithm for group Chat and Group File Share**
 
 1. A GroupMessageReceive(GMR) Thread is running which is always listening
    for a TCP socket connection on a specific port, when the user logs in for a
@@ -820,40 +810,32 @@ on remote clients side which has accept and reject option.
    the message and update the chat window andArraylist both.
    
 10. Group file share is also an option, to send file one at a time to all the users of
-   that particular chat room.
+    that particular chat room.
    
 · This is done by creating threads for each user in the room to send file con-
-   currently to all users for.
+  currently to all users for.
    
 11. File receive thread filters file receive request by the group code.
 
-· If group code matches it spawns a new thread which communicates with
-   the sending thread to continues to write file onto the disk.
+· If group code matches it spawns a new thread which communicates with the sending thread to continues to write file onto the disk.
    
-· Notifications are shown for every file receive request and the status(On
-   Homescreen a Toast is shown).
+· Notifications are shown for every file receive request and the status (On Homescreen a Toast is shown).
    
-· Message are logged in the room of user about the file and current status of
-   file(Success or Fail(ArrayList Updated)).
+· Message are logged in the room of user about the file and current status of file(Success or Fail(ArrayList Updated)).
    
-· A maximum of 3 file simultaneous receive is possible, to minimize the load
-   on devices.
+· A maximum of 3 file simultaneous receive is possible, to minimize the load on devices.
    
-· While receiving a file, also the user can send a file or chat(Network and
-   Device dependent).
+· While receiving a file, also the user can send a file or chat(Network and Device dependent).
    
 · If ChatGroupode do not matches, it ignores the request.
 
-12. The messages for the a group chat session is stored in an ArrayList, which is
-   updated by the all the threads which receives a proper message request either
-   for a chat message, file share request, Exit requests.
+12. The messages for the a group chat session is stored in an ArrayList, which is updated by the all the threads which receives a proper message request either for a chat message, file share request, Exit requests.
    
 13 .Closes Chat or exits from the Group chat.
 
 · The thread sends an exit message to all the users in its MAP.
 
-· Each receiving part modifies its GroupChatCode to maintain a proper flow
-   of data.
+· Each receiving part modifies its GroupChatCode to maintain a proper flow of data.
    
 · The MAP is cleared which store user and IP details.
 
@@ -867,24 +849,19 @@ on remote clients side which has accept and reject option.
 
 · The client side requests server for IPs of the selected users.
 
-· When the client side receives IP address of the selected users, it saves those
-  IP address in a MAP structure with key as username and IP as value.
+· When the client side receives IP address of the selected users, it saves those IP address in a MAP structure with key as username and IP as value.
    
-15. Now, each person is sent the group code and IP addresses of the rest of the
-   persons in the group chat.
+15. Now, each person is sent the group code and IP addresses of the rest of the persons in the group chat.
    
-16. The sending thread either sends a file or a message, and accordingly a receiving 
-   thread receives the message or file on two different ports.
+16. The sending thread either sends a file or a message, and accordingly a receiving thread receives the message or file on two different ports.
    
-· For each person in the map, iteratively a new thread is started to send mes-
-   sage/file request.
+· For each person in the map, iteratively a new thread is started to send message/file request.
 
-17. When other users receive exit message from a particular user, the IP address
-of that user is removed from the MAP and a new group code is generated.
+17. When other users receive exit message from a particular user, the IP address of that user is removed from the MAP and a new group code is generated.
 
 • Audio Conference Call
 
-1 . A GroupAudioCallReceive(GACR) Thread is running which is always listening
+1. A GroupAudioCallReceive(GACR) Thread is running which is always listening
    for a TCP socket connection on a specific port, when the user logs in for an audio
    conference call request.
    
@@ -914,28 +891,28 @@ of that user is removed from the MAP and a new group code is generated.
 6. At the receiving end,
 
 i. if the user accepts the call, then the flag value in second map for corresponding
-user is updated to true.
+   user is updated to true.
 
 ∗ An accept message is sent to all others listed in the first map.
 
 ∗ RecordSend Thread and PlayAudio thread are started for recording & sending
-   audio and receiving & playing audio respectively.
+  audio and receiving & playing audio respectively.
    
 ii. if the user rejects the call, then an exit message is sent to all other users whose
-IPs’ are in first map.
+    IPs’ are in first map.
 
 ∗ The corresponding sockets are closed, the maps are cleared and a Toast is shown
-that “You have Rejected the Call”.
+  that “You have Rejected the Call”.
 
-7 . At the initiator of the call, a Toast is displayed “User has accepted your Call”,
+7. At the initiator of the call, a Toast is displayed “User has accepted your Call”,
    and the corresponding RecordSend & PlayAudio thread are invoked.
    
-8 . The users can now talk over the Tablets.
+8. The users can now talk over the Tablets.
 
-9 . On either end, if the user leaves the audio conference call, then at first an exit
+9. On either end, if the user leaves the audio conference call, then at first an exit
    message is sent to all other users in his maps whose flag value are true.
    
-10 . Then all the sockets are closed, maps, flags are cleared and a Toast is shown on
+10. Then all the sockets are closed, maps, flags are cleared and a Toast is shown on
 others users end that “User has left the Call”.
 11 . If there are more then two users in the Audio Call, then even if one of them leaves
 the call(even being the initiator of the call), still others can continue their Call as
@@ -943,31 +920,41 @@ only the leaving user flag is set false in their maps.
 
 2.4 CHALLENGES AND THEIR SOLUTIONS
 ``````````````````````````````````
-• Audio call
+•** Audio call**
+
 1. Voice distortion
+
 2. Lag in audio call
+
 3. Network problem
+
 4. On usage of thread there is lot of disturbance with 0 lag, on the other hand, if
    thread is removed there is lesser disturbance but lag is more.
 
 5. Not feasible options
 ∗ Using different ports for different users was not a feasible option for audio call
 ∗ Using different threads for different users due to disturbance
-• Video Call
-1 . Media recorder only record in mp4 and 3gp formats, but neither of these two
+
+•**Video Call**
+
+1. Media recorder only record in mp4 and 3gp formats, but neither of these two
 formats provide streaming, i.e. they cant be recorded and sent through UDP packet
 at the same time as the header is missing from these type of files and is sent in the
 end so it cant be played at the other end.
+
 2 . A different approach was tried to overcome this challenge. Small chunks of audio
 was recorded and chunks were being sent and played at the other end. (When whole
 chunk was received then only it can be played at the receivers end) and while playing
 it begins to receive the next chunk and appends it in the video view (Producer-
 Consumer Problem).
+
 3 . Here the problem was that the Camera wasnt giving video as fast as it was being
 sent and played too.
+
 4 . Thus to overcome the above problem, Frame was taken from the camera feed and
 audio is taken from the audio recorder and they are added to a buffer which is then
 sent as a UDP packet.
+
 5 . The audio and frames are sent together to overcome the synchronization issue.
 • Chat application:
 1 . The 1st approached tried was sending messages through server, where the client
