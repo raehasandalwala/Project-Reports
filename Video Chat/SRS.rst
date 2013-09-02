@@ -712,15 +712,12 @@ c. If Client B accepts the call, Client A is notified to start sending and recei
 d. The sending thread on both the clients prepare and extract the packets to be
    sent in following way.
 
-· Camera sends frames, which is compressed to JPEG for memory consumption to the thread one by one which is combined with the audio recorded
-  in the buffer and a packet is formed which is sent via UDP connection as a
-  datagram packet.
+· Camera sends frames, which is compressed to JPEG for memory consumption to the thread one by one which is combined with the audio recorded in the buffer and a packet is formed which is sent via UDP connection as a datagram packet.
    
 · Along with audio and video data, audio length, video length and frame numbers are also inserted in the packet.
    
-· The receiving thread receives the packet and extracts the audio and video data in different buffers. The JPEG image is drawn on canvas and the audio
-  is fed to track to be played.
-   
+· The receiving thread receives the packet and extracts the audio and video data in different buffers. The JPEG image is drawn on canvas and the audio is fed to track to be played.
+ 
 5. Any Client can end the call at any point of time. Then the other client is notified about the end of call.
    
 – File Share Assuming that the client A and B are online:
@@ -746,6 +743,7 @@ d. The sending thread on both the clients prepare and extract the packets to be
 · If the remote user rejects the request for file share, a message is sent to Client A that its request has been rejected.
    
 ∗ It uses TCP protocol to send the file to remote client.
+
 ∗ While the file is being sent, a progress bar is shown and the file is sent in the background using Group Chat. 
 
 **Algorithm for group Chat and Group File Share**
@@ -778,16 +776,13 @@ d. The sending thread on both the clients prepare and extract the packets to be
    user. A groupchat flag is set to true whenever a group chat is started so that no
    other group chat can be start.
    
-7. If the requested user is already busy in a chat he sends an exit message to the
-   requesting party, and that request is processed.
+7. If the requested user is already busy in a chat he sends an exit message to the requesting party, and that request is processed.
    
-· An Exit message is sent by the busy party to the users in the received userid
-   IP list.
+· An Exit message is sent by the busy party to the users in the received userid IP list.
    
-· The Exit message is interprated as left the room by all the users in the online
-   list and message is shown as User Left the room.
+· The Exit message is interprated as left the room by all the users in the online list and message is shown as User Left the room.
    
-8 . Now online users in the room can either receive a message through a notification
+8. Now online users in the room can either receive a message through a notification
    (when ever he is on a homescreen ), he can go to the chat room by clicking
    on Show chat button given in the group chat window and continue chat any time
    till all the user are in the room.
@@ -799,8 +794,7 @@ d. The sending thread on both the clients prepare and extract the packets to be
    avoid delay and latency) for each user in the room (For each person in the
    Map(Containg UID & IP), iteratively a new thread is started to send message).
    
-· The sent messages are stored in an ArrayList which contains all the logs of
-   messages for the session.
+· The sent messages are stored in an ArrayList which contains all the logs of messages for the session.
    
 9. The GMR threads listnes the message request and spawns a thread to receive
    the message and update the chat window andArraylist both.
@@ -808,8 +802,7 @@ d. The sending thread on both the clients prepare and extract the packets to be
 10. Group file share is also an option, to send file one at a time to all the users of
     that particular chat room.
    
-· This is done by creating threads for each user in the room to send file con-
-  currently to all users for.
+· This is done by creating threads for each user in the room to send file concurrently to all users for.
    
 11. File receive thread filters file receive request by the group code.
 
@@ -909,10 +902,11 @@ ii. if the user rejects the call, then an exit message is sent to all other user
    message is sent to all other users in his maps whose flag value are true.
    
 10. Then all the sockets are closed, maps, flags are cleared and a Toast is shown on
-others users end that “User has left the Call”.
-11 . If there are more then two users in the Audio Call, then even if one of them leaves
-the call(even being the initiator of the call), still others can continue their Call as
-only the leaving user flag is set false in their maps.
+    others users end that “User has left the Call”.
+
+11. If there are more then two users in the Audio Call, then even if one of them leaves
+    the call(even being the initiator of the call), still others can continue their Call as
+    only the leaving user flag is set false in their maps.
 
 2.4 CHALLENGES AND THEIR SOLUTIONS
 ``````````````````````````````````
@@ -952,57 +946,78 @@ audio is taken from the audio recorder and they are added to a buffer which is t
 sent as a UDP packet.
 
 5 . The audio and frames are sent together to overcome the synchronization issue.
-• Chat application:
-1 . The 1st approached tried was sending messages through server, where the client
-will send the message and receivers name to the server and server will send that
-message to respective client at the other end. But then this approach was dropped
-and the chat between two users was changed to peer-to-peer chat to remove the role
-of server and reduce the server dependency of the overall application.
-2 . A group chat feature was also added. But here, the problem was to make every
-other user of the group chat know that they have been added to a chat room. So they
-are sent IP addresses of all the people in this group. To prevent the privacy of this
-group, a group code is made using the initials of all the users of that particular group
-chat and it is sent to other members. So this group code acts like a primary key for
-40
-CSE Department, IIT Bombay
-a particular group. And thus no other user outside this group can join this group as
-that user wont be having this groups group code.
+
+•**Chat application:**
+
+1. The 1st approached tried was sending messages through server, where the client
+   will send the message and receivers name to the server and server will send that
+   message to respective client at the other end. But then this approach was dropped
+   and the chat between two users was changed to peer-to-peer chat to remove the role
+   of server and reduce the server dependency of the overall application.
+
+2. A group chat feature was also added. But here, the problem was to make every
+   other user of the group chat know that they have been added to a chat room. So they
+   are sent IP addresses of all the people in this group. To prevent the privacy of this
+   group, a group code is made using the initials of all the users of that particular group
+   chat and it is sent to other members. So this group code acts like a primary key for
+   a particular group. And thus no other user outside this group can join this group as
+   that user wont be having this groups group code.
+   
 • Server
-1 . create a database which stores the username and password information of all reg-
-istered clients.
-2 . connect to the database using jdbc driver.
-3 . Create a UDP socket to receive messages from the clients.
-4 . Create a new thread. In this thread- (Server Time)
-∗ create another UDP socket to receive timestamp requests from the clients.
-∗ receive the time message.
-∗ send back the current time of the server.
-∗ go to second step
+
+1. create a database which stores the username and password information of all registered clients.
+
+2. connect to the database using jdbc driver.
+
+3. Create a UDP socket to receive messages from the clients.
+
+4. Create a new thread. In this thread- (Server Time)
+
+   ∗ create another UDP socket to receive timestamp requests from the clients.
+
+   ∗ receive the time message.
+
+   ∗ send back the current time of the server.
+
+   ∗ go to second step
+
 5 . Create another thread. In this thread (OnlineChecker)
-∗ sleep for 2 sec.
-∗ get the IP addresses of all online users from the database.
-∗ For all the IP addresses obtained:
-Ping each IP address.
-If reply is received, do nothing.
-Else, update the database to mark the user as offline.
-Go to first.
+
+   ∗ sleep for 2 sec.
+   
+   ∗ get the IP addresses of all online users from the database.
+   
+   ∗ For all the IP addresses obtained:
+
+      Ping each IP address.If reply is received, do nothing.
+
+      Else, update the database to mark the user as offline.
+      
+      Go to first.
+      
 6 . In the main thread:
-∗ Receive the incoming message, MESSAGE
-∗ If (timestamp of the MESSAGE) is BEFORE (servers current time) go to 5.1
-∗ If MESSAGE=login + username, update the database to mark the user as online.
-∗ Else if MESSAGE=logout + username, update the database to mark the user as
-offline.
-∗ Else if MESSAGE=chat—file—audio—video— + username + remote user-
-name , if the user with received username is online, send back the current IP
-address of the requested user. Update the availability status or busy field in
-database
-41
-CSE Department, IIT Bombay
-∗ Else if Message = group + username +remote user(i), if the user with received
-username is online, send back the current IP address of the requested user.
-∗ Go to first.
-2.5
-SUMMARY AND CONCLUSION
-2.5.1 Summary
+
+   ∗ Receive the incoming message, MESSAGE
+   
+   ∗ If (timestamp of the MESSAGE) is BEFORE (servers current time) go to 5.1
+   
+   ∗ If MESSAGE=login + username, update the database to mark the user as online.
+   
+   ∗ Else if MESSAGE=logout + username, update the database to mark the user as
+   offline.
+   
+   ∗ Else if MESSAGE=chat—file—audio—video— + username + remote user-
+   name , if the user with received username is online, send back the current IP
+   address of the requested user. Update the availability status or busy field in
+   database
+
+   ∗ Else if Message = group + username +remote user(i), if the user with received
+   username is online, send back the current IP address of the requested user.
+   
+   ∗ Go to first.
+   
+2.5 SUMMARY AND CONCLUSION
+``````````````````````````
 We started to build our Application with Group Chat via a Server. Then we moved on to share
 files across Aakash Tablets Peer-to-Peer. Our Server was then enhanced for user registration
 and authentication. As we already were in possession of “Video-Chat Software”, we started
