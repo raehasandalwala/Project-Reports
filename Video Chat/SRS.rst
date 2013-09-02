@@ -907,7 +907,7 @@ ii. if the user rejects the call, then an exit message is sent to all other user
 
 2.4 CHALLENGES AND THEIR SOLUTIONS
 ``````````````````````````````````
-•** Audio call**
+•**Audio call**
 
 1. Voice distortion
 
