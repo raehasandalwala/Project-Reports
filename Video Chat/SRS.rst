@@ -913,9 +913,9 @@ ii. if the user rejects the call, then an exit message is sent to all other user
 
 .. image::
    https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/figures/23.png
-
- .. image::
-    https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/figures/24png
+   
+.. image::
+   https://raw.github.com/raehasandalwala/Project-Reports/master/Video%20Chat/figures/24.png
    
 2.4 CHALLENGES AND THEIR SOLUTIONS
 ``````````````````````````````````
