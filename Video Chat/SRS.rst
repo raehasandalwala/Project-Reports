@@ -1,36 +1,3 @@
-ACKNOWLEDGEMENT
-===============
-
-We take this opportunity to express our profound gratitude and deep regards to Professor Deepak
-B. Phatak for offering us this internship at IIT Bombay and handling us the responsibility of this
-project. His willingness to motivate us contributed tremendously to our project. The blessing,
-help and guidance given by him time to time shall carry us a long way in the journey of life.
-We are thankful to our project’s mentor Mr. Parag Tiwari and our guide Ms. Pradnya
-Mohite, for their exemplary guidance, monitoring and constant encouragement throughout the
-project. We thank them for their cordial support and valuable information which helped us in
-completing this task through various stages.
-
-Also, we would like to extend our sincere regards to all the non-teaching staff at IIT Bombay
-for their timely support. Although, there may be many who remain unacknowledged in this
-humble note of gratitude, but there are none who remain unappreciated.
-
-Ajay Kumar
-
-Cheena Jain
-
-Manisha Barnwal
-
-Nishant Chaubey
-
-Prashant Aher
-
-Ruchit Gandhi
-
-Sankalp Rangare
-
-Shreshtha Pankaj
-
-Sumantra Chattopadhyay
 
 CHAPTER 1 : SOFTWARE REQUIREMENT SPECIFICATION
 ==================================================
