@@ -30,5 +30,3 @@
 
 `STEP 9 : Logout <https://github.com/raehasandalwala/Project-Reports/blob/master/Video%20Chat/C-Step9.rst>`_
 
-.. container:: custom
-.. note:: **This is a note.**
